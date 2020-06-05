@@ -1,17 +1,19 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@material-ui/core": "^4.10.0",
-    "@material-ui/icons": "^4.9.1",
-    "next": "^9.3.3",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
-  }
+    "name": "nextjs",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "NODE_OPTIONS='--inspect' next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.10.0",
+        "@material-ui/icons": "^4.9.1",
+        "mongoose": "^5.9.17",
+        "next": "^9.3.3",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
+        "ws": "^7.3.0"
+    }
 }
