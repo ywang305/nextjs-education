@@ -23,7 +23,7 @@ const SpellItem = ({ spellItem }) => {
 
     return (
         <Box p={2}>
-            {charArr.map((c, i) => {
+            {charArr?.map((c, i) => {
                 return i === trackPos ? (
                     <Box
                         component='span'
