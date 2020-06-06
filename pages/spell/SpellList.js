@@ -1,14 +1,12 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { Box, Typography, Divider } from '@material-ui/core';
 import fetchAsync from '../../lib/fetchAsync';
 import SpellItem from './SpellItem';
-
-const data = 'Rabit loves carrots.';
+import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider';
 
 const SpellList = () => {
     const [list, setList] = useState([]);
-    const [len, setLen] = useState(0);
+
     useEffect(() => {
         const tid = setTimeout(async function getAll() {
             const spellList = await fetchAsync('/api/spell');
@@ -17,18 +15,28 @@ const SpellList = () => {
         return () => clearTimeout(tid);
     }, [list]);
 
-    useEffect(() => {
-        const tId = setTimeout(
-            () => setLen(len => Math.min(len + 1, data.length)),
-            1000
-        );
-        return () => clearTimeout(tId);
-    }, [len]);
+    const [activeItem, setActiveItem] = useState(list.length);
 
     return (
         <div>
-            {list.map(spellItem => {
-                return <SpellItem key={spellItem._id} spellItem={spellItem} />;
+            {list.map((spellItem, i) => {
+                return (
+                    <Box
+                        p={1}
+                        fontSize='h6.fontSize'
+                        fontFamily='Comic Sans MS'
+                        style={{ cursor: 'pointer' }}
+                        key={spellItem._id}
+                        onClick={() => setActiveItem(i)}
+                    >
+                        {activeItem === i ? (
+                            <SpellItem words={spellItem.words} />
+                        ) : (
+                            spellItem.words
+                        )}
+                        <Divider />
+                    </Box>
+                );
             })}
         </div>
     );

@@ -1,51 +1,76 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Box, Typography, Divider } from '@material-ui/core';
-import fetchAsync from '../../lib/fetchAsync';
+import { useKey } from 'react-use/lib';
 
-const data = 'Rabit loves carrots.';
+const SpellItem = ({ words = '' }) => {
+    const wordArr = words.split(' ');
 
-const SpellItem = ({ spellItem }) => {
-    const charArr = spellItem?.words?.split('');
+    const [wordIndex, setWordIndex] = useState(wordArr.length);
+    const [charIndex, setCharIndex] = useState(100);
 
-    const [trackPos, setTrackPos] = useState(0);
+    useKey('ArrowRight', () => {
+        setWordIndex(i => (i + 1) % wordArr.length);
+        setCharIndex(0);
+    });
+    useKey('ArrowLeft', () => {
+        setWordIndex(i => Math.max(0, i - 1));
+        setCharIndex(0);
+    });
 
     useEffect(
         function autoSpell() {
             const tId = setTimeout(
-                () => setTrackPos(pos => Math.min(pos + 1, charArr.length - 1)),
-                1000
+                () =>
+                    setCharIndex(pos =>
+                        Math.min(pos + 1, wordArr[wordIndex]?.length)
+                    ),
+                2000
             );
             return () => clearTimeout(tId);
         },
-        [trackPos]
+        [charIndex]
     );
 
+    const clickHanlder = index => () => {
+        setWordIndex(index);
+        setCharIndex(0);
+    };
+
     return (
-        <Box p={2}>
-            {charArr?.map((c, i) => {
-                return i === trackPos ? (
+        <div>
+            {wordArr?.map((w, i) => {
+                const isIndexWord = i === wordIndex;
+                return (
                     <Box
+                        onClick={clickHanlder(i)}
                         component='span'
-                        color='info.main'
                         letterSpacing={10}
-                        fontSize='h2.fontSize'
+                        bgcolor={isIndexWord && 'grey.100'}
+                        mr={3}
                     >
-                        {c}
-                    </Box>
-                ) : (
-                    <Box
-                        component='span'
-                        color='text.primary'
-                        letterSpacing={10}
-                        fontSize='h6.fontSize'
-                    >
-                        {c}
+                        {w.split('').map((c, j) => {
+                            const isIndexChar = isIndexWord && j === charIndex;
+                            return (
+                                <Box
+                                    component='span'
+                                    color={
+                                        isIndexChar
+                                            ? 'info.main'
+                                            : 'text.primary'
+                                    }
+                                    fontSize={`${
+                                        isIndexChar ? 'h3' : 'h6'
+                                    }.fontSize`}
+                                >
+                                    {c}
+                                </Box>
+                            );
+                        })}
                     </Box>
                 );
             })}
-            <Divider />
-        </Box>
+        </div>
     );
 };
 
