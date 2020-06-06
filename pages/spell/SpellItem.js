@@ -31,6 +31,19 @@ const SpellItem = ({ words = '' }) => {
         },
         [charIndex]
     );
+    useEffect(
+        function speak() {
+            if (window.speechSynthesis) {
+                const spokenMsg =
+                    charIndex >= wordArr[wordIndex]?.length
+                        ? wordArr[wordIndex] ?? ''
+                        : wordArr[wordIndex]?.[charIndex] ?? '';
+
+                speechSynthesis.speak(new SpeechSynthesisUtterance(spokenMsg));
+            }
+        },
+        [charIndex, wordIndex]
+    );
 
     const clickHanlder = index => () => {
         setWordIndex(index);
