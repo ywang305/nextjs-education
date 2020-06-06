@@ -5,7 +5,7 @@ export const spellSchema = new mongoose.Schema({
     fromUserId: String,
     toUserId: String,
     words: { type: String, trim: true, minlength: 1 },
-    updated: { type: Date, default: Date.now, index: { expires: '60m' } },
+    createdAt: { type: Date, default: Date.now, expires: 7200 },
 });
 
 export default async (req, res) => {

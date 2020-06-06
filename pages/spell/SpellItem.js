@@ -6,7 +6,7 @@ import { useKey } from 'react-use/lib';
 const SpellItem = ({ words = '' }) => {
     const wordArr = words.split(' ');
 
-    const [wordIndex, setWordIndex] = useState(wordArr.length);
+    const [wordIndex, setWordIndex] = useState(-1);
     const [charIndex, setCharIndex] = useState(100);
 
     useKey('ArrowRight', () => {

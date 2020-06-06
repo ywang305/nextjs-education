@@ -2,12 +2,6 @@ import React, { useState, useCallback, useMemo } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import fetchAsync from '../../lib/fetchAsync';
 
-const postPath = '/api/spell';
-const postMeta = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-};
-
 const InputWords = () => {
     const [value, setValue] = useState('');
 
@@ -19,6 +13,7 @@ const InputWords = () => {
         async e => {
             e.preventDefault();
             if (value) {
+                setValue('');
                 const url = '/api/spell';
                 const fromUserId = undefined;
                 const toUserId = undefined;
@@ -27,7 +22,6 @@ const InputWords = () => {
                     method: 'POST',
                     body: { fromUserId, toUserId, words },
                 });
-                setValue('');
             }
         },
         [value]
