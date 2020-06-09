@@ -9,6 +9,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import useKey from 'react-use/lib/useKey';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import PlayIcon from '@material-ui/icons/PlayArrow';
+import speak from '../../lib/html5/speak';
+import IconButton from '@material-ui/core/IconButton';
 
 const SpellList = () => {
     const [list, setList] = useState([]);
@@ -21,9 +23,11 @@ const SpellList = () => {
         return () => clearTimeout(tid);
     }, [list]);
 
-    const [activeItem, setActiveItem] = useState(list.length);
+    const [activeItem, setActiveItem] = useState(0);
     useKey('ArrowDown', () => {
-        setActiveItem(i => (i + 1) % list.length);
+        if (list.length) {
+            setActiveItem(i => (i + 1) % list.length);
+        }
     });
     useKey('ArrowUp', () => {
         setActiveItem(i => Math.max(0, i - 1));
@@ -35,7 +39,8 @@ const SpellList = () => {
             aria-labelledby='nested-list-subheader'
             subheader={
                 <ListSubheader component='div' id='nested-list-subheader'>
-                    Spell Words List
+                    Spell Words List Utterance. &nbsp;&nbsp; ↑ / ↓ row. &nbsp; ←
+                    / → letter. &nbsp; ▶ play sentence
                 </ListSubheader>
             }
         >
@@ -43,14 +48,15 @@ const SpellList = () => {
                 const isActive = activeItem === i;
                 return (
                     <ListItem
-                        button
                         onClick={() => setActiveItem(i)}
                         key={spellItem._id}
                     >
                         <ListItemIcon>
-                            <PlayIcon
-                                color={isActive ? 'primary' : 'diabled'}
-                            />
+                            <IconButton onClick={() => speak(spellItem.words)}>
+                                <PlayIcon
+                                    color={isActive ? 'primary' : 'diabled'}
+                                />
+                            </IconButton>
                         </ListItemIcon>
                         <Box
                             p={1}
