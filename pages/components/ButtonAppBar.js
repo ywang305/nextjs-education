@@ -28,7 +28,7 @@ export function ButtonAppBar() {
                 </Link>
                 <Box style={{ flexGrow: 1 }} />
                 {links.map(l => (
-                    <Link href={'/' + l}>
+                    <Link href={'/' + l} key={l}>
                         <Button color='inherit'>{l}</Button>
                     </Link>
                 ))}

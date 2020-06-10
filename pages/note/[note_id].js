@@ -11,8 +11,6 @@ import {
     CardContent,
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
-import { useKey } from 'react-use/lib';
 import { useRouter } from 'next/router';
 import fetchAsync from '../../lib/fetchAsync';
 
@@ -50,7 +48,16 @@ const Note = () => {
                 }
             />
             <CardContent>
-                <Typography paragraph>{note.text}</Typography>
+                {note.text
+                    ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+                    .split('|')
+                    .map((sentence, i) => {
+                        return (
+                            <Typography key={i} paragraph>
+                                {sentence}
+                            </Typography>
+                        );
+                    })}
             </CardContent>
         </Card>
     );
