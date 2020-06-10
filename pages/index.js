@@ -5,7 +5,6 @@ import ButtonAppBar from './components/ButtonAppBar';
 const Home = () => {
     return (
         <div>
-            <ButtonAppBar />
             <main>hello world</main>
         </div>
     );

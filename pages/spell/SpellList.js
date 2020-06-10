@@ -25,7 +25,7 @@ const SpellList = () => {
 
     const [activeItem, setActiveItem] = useState(0);
     useKey('ArrowDown', () => {
-        if (list.length) {
+        if (list?.length) {
             setActiveItem(i => (i + 1) % list.length);
         }
     });
@@ -44,36 +44,40 @@ const SpellList = () => {
                 </ListSubheader>
             }
         >
-            {list.map((spellItem, i) => {
-                const isActive = activeItem === i;
-                return (
-                    <ListItem
-                        onClick={() => setActiveItem(i)}
-                        key={spellItem._id}
-                    >
-                        <ListItemIcon>
-                            <IconButton onClick={() => speak(spellItem.words)}>
-                                <PlayIcon
-                                    color={isActive ? 'primary' : 'diabled'}
-                                />
-                            </IconButton>
-                        </ListItemIcon>
-                        <Box
-                            p={1}
-                            fontSize='h6.fontSize'
-                            fontFamily='Comic Sans MS'
-                            color={!isActive && 'text.disabled'}
+            {list
+                ?.filter(item => item.words)
+                .map((spellItem, i) => {
+                    const isActive = activeItem === i;
+                    return (
+                        <ListItem
+                            onClick={() => setActiveItem(i)}
+                            key={spellItem._id}
                         >
-                            {isActive ? (
-                                <SpellItem words={spellItem.words} />
-                            ) : (
-                                spellItem.words
-                            )}
-                            <Divider />
-                        </Box>
-                    </ListItem>
-                );
-            })}
+                            <ListItemIcon>
+                                <IconButton
+                                    onClick={() => speak(spellItem.words)}
+                                >
+                                    <PlayIcon
+                                        color={isActive ? 'primary' : 'diabled'}
+                                    />
+                                </IconButton>
+                            </ListItemIcon>
+                            <Box
+                                p={1}
+                                fontSize='h6.fontSize'
+                                fontFamily='Comic Sans MS'
+                                color={!isActive && 'text.disabled'}
+                            >
+                                {isActive ? (
+                                    <SpellItem words={spellItem.words} />
+                                ) : (
+                                    spellItem.words
+                                )}
+                                <Divider />
+                            </Box>
+                        </ListItem>
+                    );
+                })}
         </List>
     );
 };

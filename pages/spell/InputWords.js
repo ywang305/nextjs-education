@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Button, TextField } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import fetchAsync from '../../lib/fetchAsync';
+import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box';
 
 const InputWords = () => {
     const [value, setValue] = useState('');
@@ -32,16 +34,18 @@ const InputWords = () => {
             <TextField
                 name='textfield'
                 fullWidth
-                label='Input Words'
+                label='Input Words to Spell'
                 multiline
-                rows={4}
+                rows={3}
                 value={value}
                 onChange={changeHandler}
                 variant='outlined'
             />
-            <Button type='submit' variant='contained' color='primary'>
-                Send
-            </Button>
+            <Box py={1}>
+                <Button type='submit' variant='contained' color='primary'>
+                    Send
+                </Button>
+            </Box>
         </form>
     );
 };

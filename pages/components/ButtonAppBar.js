@@ -9,6 +9,8 @@ import Link from 'next/link';
 import MenuIcon from '@material-ui/icons/Menu';
 import Box from '@material-ui/core/Box';
 
+const links = ['note', 'spell', 'login'];
+
 export function ButtonAppBar() {
     return (
         <AppBar position='static'>
@@ -24,11 +26,12 @@ export function ButtonAppBar() {
                         Kids Edu
                     </Typography>
                 </Link>
-                <Box flexGrow={1} />
-                <Link href='/spell'>
-                    <Button color='inherit'>SPELL</Button>
-                </Link>
-                <Button color='inherit'>Login</Button>
+                <Box style={{ flexGrow: 1 }} />
+                {links.map(l => (
+                    <Link href={'/' + l}>
+                        <Button color='inherit'>{l}</Button>
+                    </Link>
+                ))}
             </Toolbar>
         </AppBar>
     );
