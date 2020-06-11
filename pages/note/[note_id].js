@@ -9,12 +9,18 @@ import {
     Avatar,
     IconButton,
     CardContent,
+    Drawer,
 } from '@material-ui/core';
+import { TreeView, TreeItem } from '@material-ui/lab';
+
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import NoteIcon from '@material-ui/icons/Notes';
+
 import { useRouter } from 'next/router';
 import fetchAsync from '../../lib/fetchAsync';
+import Annotation from './Annotation';
 
-const Note = () => {
+const useNote = () => {
     const { query } = useRouter();
     const { note_id } = query;
     const [note, setNote] = useState({
@@ -32,14 +38,19 @@ const Note = () => {
             reqNote();
         }
     }, [note_id]);
+    return [note];
+};
+
+const Note = () => {
+    const [note] = useNote();
 
     return (
         <Card>
             <CardHeader
                 avatar={<Avatar>R</Avatar>}
                 action={
-                    <IconButton aria-label='settings'>
-                        <MoreVertIcon />
+                    <IconButton aria-label='annotation'>
+                        <NoteIcon />
                     </IconButton>
                 }
                 title={note.title}
@@ -48,16 +59,7 @@ const Note = () => {
                 }
             />
             <CardContent>
-                {note.text
-                    ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
-                    .split('|')
-                    .map((sentence, i) => {
-                        return (
-                            <Typography key={i} paragraph>
-                                {sentence}
-                            </Typography>
-                        );
-                    })}
+                <Annotation text={note.text} />
             </CardContent>
         </Card>
     );

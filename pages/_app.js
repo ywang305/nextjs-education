@@ -11,13 +11,16 @@ import {
     lightGreen,
     lime,
     yellow,
+    amber,
+    deepPurple,
+    deepOrange,
 } from '@material-ui/core/colors';
 import ButtonAppBar from './components/ButtonAppBar';
 
 const theme = createMuiTheme({
     palette: {
-        primary: teal,
-        secondary: yellow,
+        primary: indigo,
+        secondary: deepOrange,
     },
     typography: {
         // In Chinese and Japanese the characters are usually larger,
