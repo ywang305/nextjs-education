@@ -16,6 +16,9 @@ import {
     deepOrange,
 } from '@material-ui/core/colors';
 import ButtonAppBar from './components/ButtonAppBar';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
+import { persistor, store } from '../lib/store/store';
 
 const theme = createMuiTheme({
     palette: {
@@ -29,13 +32,19 @@ const theme = createMuiTheme({
     },
 });
 
+// const PersistGateWithRouter = withRouter(PersistGate);
+
 function MyApp({ Component, pageProps }) {
     return (
         <div>
-            <MuiThemeProvider theme={theme}>
-                <ButtonAppBar />
-                <Component {...pageProps} />
-            </MuiThemeProvider>
+            <Provider store={store}>
+                <PersistGate persistor={persistor} loading={null}>
+                    <MuiThemeProvider theme={theme}>
+                        <ButtonAppBar />
+                        <Component {...pageProps} />
+                    </MuiThemeProvider>
+                </PersistGate>
+            </Provider>
         </div>
     );
 }

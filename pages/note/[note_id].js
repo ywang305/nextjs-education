@@ -12,13 +12,16 @@ import {
     Drawer,
 } from '@material-ui/core';
 import { TreeView, TreeItem } from '@material-ui/lab';
-
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import NoteIcon from '@material-ui/icons/Notes';
+import SettingsVoiceIcon from '@material-ui/icons/SettingsVoice';
 
 import { useRouter } from 'next/router';
 import fetchAsync from '../../lib/fetchAsync';
-import Annotation from './Annotation';
+import Paragraph from './annotation/Paragraph';
+import dynamic from 'next/dynamic';
+
+const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
+    ssr: false,
+});
 
 const useNote = () => {
     const { query } = useRouter();
@@ -48,18 +51,19 @@ const Note = () => {
         <Card>
             <CardHeader
                 avatar={<Avatar>R</Avatar>}
-                action={
-                    <IconButton aria-label='annotation'>
-                        <NoteIcon />
-                    </IconButton>
-                }
+                action={<SpeechSetting />}
                 title={note.title}
                 subheader={
                     note._id ? new Date(note.updatedAt).toLocaleString() : ''
                 }
             />
             <CardContent>
-                <Annotation text={note.text} />
+                {note.text
+                    .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+                    .split('|')
+                    .map((parag, i) => {
+                        return <Paragraph key={i} text={parag} />;
+                    })}
             </CardContent>
         </Card>
     );
