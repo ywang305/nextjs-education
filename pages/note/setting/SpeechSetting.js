@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import StopIcon from '@material-ui/icons/Stop';
-import { useSpeechSynthesis } from 'react-speech-kit';
+import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
 import { updateDeviceSpeechUtteranceCreator } from '../../../lib/store/device/action';
 import Tooltip from '@material-ui/core/Tooltip';
 

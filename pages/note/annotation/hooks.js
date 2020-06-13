@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSpeechSynthesis } from 'react-speech-kit';
+import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
 
 export const usePopover = () => {
     // const [anchorEl, setAnchorEl] = React.useState(null);
@@ -53,3 +53,5 @@ export const useAnno = () => {
     const [annoOpen, setAnnoOpen] = useState(false);
     return [annoOpen, setAnnoOpen];
 };
+
+export default useAnno;

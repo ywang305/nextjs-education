@@ -9,20 +9,13 @@ import {
     Avatar,
     IconButton,
     CardContent,
-    Switch,
 } from '@material-ui/core';
 
 import { useRouter } from 'next/router';
 import fetchAsync from '../../lib/fetchAsync';
-// import Paragraph from './annotation/Paragraph';
-import dynamic from 'next/dynamic';
+import Paragraph from './annotation/Paragraph';
+import SpeechSetting from './setting/SpeechSetting';
 import SingleMode from './setting/SingleMode';
-const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
-    ssr: false,
-});
-const Paragraph = dynamic(() => import('./annotation/Paragraph'), {
-    ssr: false,
-});
 
 const useNote = () => {
     const { query } = useRouter();
