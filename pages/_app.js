@@ -19,6 +19,7 @@ import ButtonAppBar from './components/ButtonAppBar';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import { persistor, store } from '../lib/store/store';
+import { withRouter } from 'next/router';
 
 const theme = createMuiTheme({
     palette: {
@@ -32,18 +33,18 @@ const theme = createMuiTheme({
     },
 });
 
-// const PersistGateWithRouter = withRouter(PersistGate);
+const PersistGateWithRouter = withRouter(PersistGate);
 
 function MyApp({ Component, pageProps }) {
     return (
         <div>
             <Provider store={store}>
-                <PersistGate persistor={persistor} loading={null}>
+                <PersistGateWithRouter persistor={persistor} loading={null}>
                     <MuiThemeProvider theme={theme}>
                         <ButtonAppBar />
                         <Component {...pageProps} />
                     </MuiThemeProvider>
-                </PersistGate>
+                </PersistGateWithRouter>
             </Provider>
         </div>
     );

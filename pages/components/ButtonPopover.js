@@ -3,10 +3,18 @@ import { Popover, StepConnector, ButtonGroup } from '@material-ui/core';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import NotesIcon from '@material-ui/icons/Notes';
 
-const ButtonPopover = ({ anchorEl, onClose, children }) => {
+const ButtonPopover = ({
+    anchorReference,
+    anchorPosition,
+    anchorEl,
+    onClose,
+    children,
+}) => {
     return (
         <Popover
-            open={Boolean(anchorEl)}
+            open={Boolean(anchorEl || anchorPosition)}
+            anchorReference={anchorReference}
+            anchorPosition={anchorPosition}
             anchorEl={anchorEl}
             onClose={onClose}
             anchorOrigin={{
@@ -23,20 +31,6 @@ const ButtonPopover = ({ anchorEl, onClose, children }) => {
                 color='secondary'
                 aria-label='outlined secondary button group'
             >
-                {/* <IconButton
-                    size='small'
-                    color='secondary'
-                    onClick={clickSpeechHandler}
-                >
-                    <PlayArrowIcon />
-                </IconButton>
-                <IconButton
-                    size='small'
-                    color='secondary'
-                    onClick={clickToggleDlg}
-                >
-                    <NotesIcon />
-                </IconButton> */}
                 {children}
             </ButtonGroup>
         </Popover>

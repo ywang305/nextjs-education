@@ -1,21 +1,18 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import { TreeView, TreeItem } from '@material-ui/lab';
 import SettingsVoiceIcon from '@material-ui/icons/SettingsVoice';
-
-import Slider from '@material-ui/core/Slider';
-import VolumeDown from '@material-ui/icons/VolumeDown';
-import VolumeUp from '@material-ui/icons/VolumeUp';
-import SpeedIcon from '@material-ui/icons/Speed';
 import IconButton from '@material-ui/core/IconButton';
+import Slider from '@material-ui/core/Slider';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import StopIcon from '@material-ui/icons/Stop';
 import { useSpeechSynthesis } from 'react-speech-kit';
+import { updateDeviceSpeechUtteranceCreator } from '../../../lib/store/device/action';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const useMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,13 +28,35 @@ const useMenu = () => {
 };
 
 const useSetting = () => {
-    const [pitch, setPitch] = useState(1);
-    const [rate, setRate] = useState(1); // 0.1 - 10
-    const [voice, setVoice] = useState(null);
+    const dispatch = useDispatch();
+    const speech = useSelector(state => state.device.speech);
+    const [pitch, setPitch] = useState(speech.pitch);
+    const [rate, setRate] = useState(speech.rate);
+    const [voiceName, setVoiceName] = useState(speech.voiceName);
+
+    useEffect(
+        function saveUtteranceOptionToRedux() {
+            if (
+                pitch != speech.pitch ||
+                rate != speech.rate ||
+                voiceName != speech.voiceName
+            ) {
+                dispatch(
+                    updateDeviceSpeechUtteranceCreator({
+                        pitch,
+                        rate,
+                        voiceName,
+                    })
+                );
+            }
+        },
+        [pitch, rate, voiceName]
+    );
 
     const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
 
     const speakHandler = text => () => {
+        const voice = voices.find(v => v.name === voiceName);
         speak({ text, voice, rate, pitch });
     };
 
@@ -46,8 +65,8 @@ const useSetting = () => {
         setPitch,
         rate,
         setRate,
-        voice,
-        setVoice,
+        voiceName,
+        setVoiceName,
         speakHandler,
         cancel,
         speaking,
@@ -63,8 +82,8 @@ const SpeechSetting = () => {
         setPitch,
         rate,
         setRate,
-        voice,
-        setVoice,
+        voiceName,
+        setVoiceName,
         speakHandler,
         cancel,
         speaking,
@@ -74,11 +93,16 @@ const SpeechSetting = () => {
 
     return (
         <div>
-            <IconButton onClick={clickOpen} disabled={!supported}>
-                <SettingsVoiceIcon />
-                {!supported &&
-                    'Oh no, it looks like your browser does not support Speech Synthesis.'}
-            </IconButton>
+            <Tooltip title='语音设置' aria-label='tip-speech'>
+                <IconButton
+                    onClick={clickOpen}
+                    disabled={!supported}
+                    color='secondary'
+                >
+                    <SettingsVoiceIcon />
+                </IconButton>
+            </Tooltip>
+
             <Menu
                 anchorEl={anchorEl}
                 keepMounted
@@ -89,7 +113,9 @@ const SpeechSetting = () => {
                     <Box display='flex' border={1} p={1}>
                         <Box px={1} flex={1}>
                             <Typography color='textSecondary' variant='caption'>
-                                Hi, I am a robot. How are you doing today?
+                                {`Hi, I am ${
+                                    voiceName ? voiceName : 'a robot'
+                                }. How are you doing today?`}
                             </Typography>
                         </Box>
                         <Button
@@ -97,7 +123,9 @@ const SpeechSetting = () => {
                                 speaking
                                     ? cancel
                                     : speakHandler(
-                                          'Hi, I am a robot. How are you doing today?'
+                                          `Hi, I am ${
+                                              voiceName ? voiceName : 'a robot'
+                                          }. How are you doing today?`
                                       )
                             }
                             variant='contained'
@@ -106,7 +134,7 @@ const SpeechSetting = () => {
                                 speaking ? <StopIcon /> : <KeyboardVoiceIcon />
                             }
                         >
-                            Test
+                            测试
                         </Button>
                     </Box>
                     <Box aria-label='rate' py={2}>
@@ -122,7 +150,7 @@ const SpeechSetting = () => {
                         />
                     </Box>
                     <Box aria-label='pitch'>
-                        <Typography>{`语调 ${Math.round(
+                        <Typography>{`语调  ${Math.round(
                             (pitch - 1) * 10
                         )}`}</Typography>
                         <Slider
@@ -139,13 +167,10 @@ const SpeechSetting = () => {
                     </Box>
                     <TextField
                         select
-                        label='Select Voice'
-                        value={voice?.name ?? ''}
+                        label='选择声音'
+                        value={voiceName}
                         onChange={e => {
-                            const found = voices.find(
-                                v => v.name === e.target.value
-                            );
-                            setVoice(found);
+                            setVoiceName(e.target.value);
                         }}
                         SelectProps={{
                             native: true,
