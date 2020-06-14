@@ -59,4 +59,4 @@ export const useEditAnnoDlg = () => {
     return [openDlg, setOpenDlg];
 };
 
-export default {};
+export default () => {};
