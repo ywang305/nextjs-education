@@ -14,9 +14,13 @@ import {
 import { useRouter } from 'next/router';
 import fetchAsync from '../../lib/fetchAsync';
 import Paragraph from './annotation/Paragraph';
-import SpeechSetting from './setting/SpeechSetting';
+// import SpeechSetting from './setting/SpeechSetting';
 import SingleMode from './setting/SingleMode';
 import AnnoToggle from './setting/AnnoToggle';
+import dynamic from 'next/dynamic';
+const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
+    ssr: false,
+});
 
 const useNote = () => {
     const { query } = useRouter();
