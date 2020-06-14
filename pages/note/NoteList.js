@@ -24,10 +24,6 @@ const NoteList = () => {
     useEffect(() => {
         getTitles();
     }, []);
-    useEffect(() => {
-        const tid = setTimeout(getTitles, 60000);
-        return () => clearTimeout(tid);
-    }, [list]);
 
     return (
         <List

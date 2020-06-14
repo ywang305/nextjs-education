@@ -7,6 +7,9 @@ import TreeItem from '@material-ui/lab/TreeItem';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Typography from '@material-ui/core/Typography';
+import EditIcon from '@material-ui/icons/Edit';
+
 import Avatar from '@material-ui/core/Avatar';
 import WorkIcon from '@material-ui/icons/Work';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
@@ -30,7 +33,8 @@ import FlashAutoIcon from '@material-ui/icons/FlashAuto';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import RestaurantIcon from '@material-ui/icons/Restaurant';
 import AlertIOS from '../../components/AlertIOS';
-import { usePopover, usePlaySpeech, useLoopSpeech, useAnno } from './hooks';
+import Fab from '@material-ui/core/Fab';
+import Button from '@material-ui/core/Button';
 
 const icons = [
     BeachAccessIcon,
@@ -56,57 +60,60 @@ const icons = [
     RestaurantIcon,
 ];
 
-const Anno = () => {
-    const annoDict = new Map([
+const annoDict = new Map([
+    [
+        'London',
         [
-            'London',
-            [
-                {
-                    comment: '伦敦',
-                    userId: 'Jack',
-                    updatedAt: '2020-01-03T13:22',
-                },
-                {
-                    comment: '是伦敦意思',
-                    userId: '秋名山老司机',
-                    updatedAt: '2020-04-01T00:12',
-                },
-                {
-                    comment: 'London？ 没去过这里',
-                    userId: '我叫大海',
-                    updatedAt: '2020-04-01T06:30',
-                },
-            ],
+            {
+                comment: '伦敦',
+                userId: 'Jack',
+                updatedAt: '2020-01-03T13:22',
+            },
+            {
+                comment: '是伦敦意思',
+                userId: '秋名山老司机',
+                updatedAt: '2020-04-01T00:12',
+            },
+            {
+                comment: 'London？ 没去过这里',
+                userId: '我叫大海',
+                updatedAt: '2020-04-01T06:30',
+            },
         ],
+    ],
+    [
+        'hotdog',
         [
-            'hotdog',
-            [
-                {
-                    comment: '热死个🐶',
-                    userId: 'Jack',
-                    updatedAt: '2020-01-03T13:25',
-                },
-                {
-                    comment: '🌭️ 好吃的',
-                    userId: 'Tom',
-                    updatedAt: '2020-03-11T09:12',
-                },
-            ],
+            {
+                comment: '热死个🐶',
+                userId: 'Jack',
+                updatedAt: '2020-01-03T13:25',
+            },
+            {
+                comment: '🌭️ 好吃的',
+                userId: 'Tom',
+                updatedAt: '2020-03-11T09:12',
+            },
         ],
+    ],
+    [
+        'rubble',
         [
-            'rubble',
-            [
-                {
-                    comment: '碎块，碎石头，瓦砾. be destroyed, broken up',
-                    userId: 'Tom',
-                    updatedAt: '2020-03-05T19:20',
-                },
-            ],
+            {
+                comment: '碎块，碎石头，瓦砾. be destroyed, broken up',
+                userId: 'Tom',
+                updatedAt: '2020-03-05T19:20',
+            },
         ],
-    ]);
+    ],
+]);
 
+const Anno = () => {
     return (
-        <Box border={1} borderRadius={8} borderColor='grey.500' ml={2} p={2}>
+        <Box py={1}>
+            <Typography variant='caption' color='textSecondary'>
+                注解：
+            </Typography>
             <TreeView
                 defaultCollapseIcon={<ExpandMoreIcon />}
                 defaultExpandIcon={<ChevronRightIcon />}

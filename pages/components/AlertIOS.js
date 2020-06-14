@@ -4,12 +4,12 @@ import Modal from '@material-ui/core/Modal';
 import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button';
 
-const AlertIOS = ({ open, closeHandler, cancelBtnText = null, children }) => {
+const AlertIOS = ({ open, onClose, cancelBtnText = null, children }) => {
     return (
         <Modal
             disableAutoFocus
             open={open}
-            onClose={closeHandler}
+            onClose={onClose}
             style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -32,7 +32,7 @@ const AlertIOS = ({ open, closeHandler, cancelBtnText = null, children }) => {
                         mt={1}
                         pl={1}
                     >
-                        <Button onClick={closeHandler} variant='text' fullWidth>
+                        <Button onClick={onClose} variant='text' fullWidth>
                             {cancelBtnText ?? 'Cancel'}
                         </Button>
                     </Box>

@@ -1,57 +1,62 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
 
 export const usePopover = () => {
     // const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorPosition, setAnchorPosition] = useState(null);
+    const [selectText, setSelectText] = useState(null);
+
     const openPopover = event => {
         // setAnchorEl(event.currentTarget);
-        const selectedText = window.getSelection()?.toString();
-        if (selectedText) {
+        const stxt = window?.getSelection()?.toString();
+        if (/[a-z0-9]/i.test(stxt)) {
+            setSelectText(stxt);
             const { clientX, clientY } = event;
             setAnchorPosition({ left: clientX, top: clientY - 10 });
         }
     };
 
-    const closeHandler = () => {
+    const closePopoverHandler = () => {
         setAnchorPosition(null);
         // setAnchorEl(null);
     };
 
-    return [anchorPosition, openPopover, closeHandler];
+    return [
+        selectText,
+        setSelectText,
+        anchorPosition,
+        openPopover,
+        closePopoverHandler,
+    ];
 };
 
 export const usePlaySpeech = () => {
     const speech = useSelector(state => state.device.speech);
     const { speak, cancel, speaking, supported, voices } = useSpeechSynthesis();
-    const clickPlayHandler = text => {
+    const clickPlayHandler = text => () => {
         const { voiceName, rate, pitch } = speech;
-
-        if (text) {
-            const voice = voices.find(v => v.name === voiceName);
-            speak({ text, voice, rate, pitch });
-        }
+        const voice = voices.find(v => v.name === voiceName);
+        speak({ text, voice, rate, pitch });
     };
     return [clickPlayHandler, cancel, speaking, supported];
 };
 
 export const useLoopSpeech = () => {
     const [clickPlayHandler, cancel, speaking, supported] = usePlaySpeech();
-    const clickLoopHandler = () => {
-        const selected = window.getSelection()?.toString();
-        let repeated = selected;
+    const clickLoopHandler = text => () => {
+        let txt = text;
         for (let i = 0; i < 5; ++i) {
-            repeated += ' ' + selected;
+            txt += ' ' + text;
         }
-        clickPlayHandler(repeated);
+        clickPlayHandler(txt)();
     };
     return [clickLoopHandler, cancel, speaking, supported];
 };
 
-export const useAnno = () => {
-    const [annoOpen, setAnnoOpen] = useState(false);
-    return [annoOpen, setAnnoOpen];
+export const useEditAnnoDlg = () => {
+    const [openDlg, setOpenDlg] = useState(false);
+    return [openDlg, setOpenDlg];
 };
 
-export default useAnno;
+export default {};

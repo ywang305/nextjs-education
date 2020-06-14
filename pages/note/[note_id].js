@@ -16,6 +16,7 @@ import fetchAsync from '../../lib/fetchAsync';
 import Paragraph from './annotation/Paragraph';
 import SpeechSetting from './setting/SpeechSetting';
 import SingleMode from './setting/SingleMode';
+import AnnoToggle from './setting/AnnoToggle';
 
 const useNote = () => {
     const { query } = useRouter();
@@ -36,9 +37,8 @@ const useNote = () => {
         }
     }, [note_id]);
 
-    const paragraphs = note.text
-        .replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
-        .split('|');
+    const paragraphs =
+        note?.text?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|') ?? [];
 
     return [note._id, note.title, note.updatedAt, paragraphs];
 };
@@ -48,21 +48,32 @@ const useSingle = () => {
     const [singleMode, setSingleMode] = useState(false);
     return [singleMode, setSingleMode, paragIndex, setParagIndex];
 };
+const useAnnoToggle = () => {
+    const [annoOpen, setAnnoOpen] = useState(false);
+    return [annoOpen, setAnnoOpen];
+};
 
 const Note = () => {
     const [_id, title, updatedAt, paragraphs] = useNote();
     const [singleMode, setSingleMode, paragIndex, setParagIndex] = useSingle();
+    const [annoOpen, setAnnoOpen] = useAnnoToggle();
 
     return (
         <Card>
             <CardHeader
-                avatar={<Avatar>R</Avatar>}
+                avatar={<Avatar alt='新概念' src='/xgn.jpeg' />}
                 action={
-                    <Box display='flex'>
-                        <SingleMode
-                            singleMode={singleMode}
-                            setSingleMode={setSingleMode}
-                        />
+                    <Box display='flex' alignItems='center'>
+                        <Box>
+                            <SingleMode
+                                singleMode={singleMode}
+                                setSingleMode={setSingleMode}
+                            />
+                            <AnnoToggle
+                                annoOpen={annoOpen}
+                                setAnnoOpen={setAnnoOpen}
+                            />
+                        </Box>
                         <Divider orientation='vertical' flexItem />
                         <SpeechSetting />
                     </Box>
@@ -72,16 +83,23 @@ const Note = () => {
             />
             <CardContent>
                 {singleMode ? (
-                    <Paragraph text={paragraphs[paragIndex ?? 0]} />
+                    <Paragraph
+                        focused
+                        text={paragraphs[paragIndex ?? 0]}
+                        annoOpen={annoOpen}
+                    />
                 ) : (
                     paragraphs.map((parag, i) => {
+                        const focused = paragIndex === i;
                         return (
                             <Paragraph
                                 key={i}
+                                focused={focused}
                                 text={parag}
                                 setParagIndex={() => {
-                                    if (paragIndex !== i) setParagIndex(i);
+                                    if (!focused) setParagIndex(i);
                                 }}
+                                annoOpen={annoOpen}
                             />
                         );
                     })
