@@ -12,6 +12,7 @@
         "@material-ui/icons": "^4.9.1",
         "@material-ui/lab": "^4.0.0-alpha.55",
         "global": "^4.4.0",
+        "isomorphic-fetch": "^2.2.1",
         "mongoose": "^5.9.17",
         "next": "^9.3.3",
         "react": "^16.13.0",

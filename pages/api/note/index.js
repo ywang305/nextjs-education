@@ -2,11 +2,25 @@ import mongoose, { Schema } from 'mongoose';
 import dbconn from '../../../lib/serverless/dbconn';
 import restHandler from '../../../lib/serverless/rest_api_handler';
 
+export const commentSchema = new Schema(
+    {
+        fromUserId: { type: String, default: 'anonymous' },
+        text: String,
+    },
+    { timestamps: true }
+);
+
+export const paragraphSchema = new Schema({
+    text: String,
+    comments: [commentSchema],
+});
+
 export const noteSchema = new Schema(
     {
         fromUserId: String,
+        book: String,
         title: { type: String, trim: true, minlength: 1 },
-        text: { type: String, trim: true, minlength: 1 },
+        paragraphs: [paragraphSchema],
     },
     { timestamps: true }
 );
@@ -20,18 +34,38 @@ export default async (req, res) => {
                 return Note.find({})
                     .sort('-updated')
                     .limit(10)
-                    .select('title fromUserId updatedAt')
+                    .select('book title fromUserId updatedAt')
                     .exec();
             case 'POST':
-                if (body.id) {
-                    return Note.findByIdAndUpdate(
-                        body.id,
-                        { ...body },
-                        { new: true }
-                    ).exec();
-                } else {
-                    return Note.create(body);
-                }
+                const { book, title, fromUserId, text } = body;
+                const paragraphs = (
+                    text?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|') ??
+                    []
+                ).map(text => {
+                    return { text };
+                });
+                return Note.create({
+                    paragraphs,
+                    title,
+                    book,
+                    fromUserId,
+                });
+
+            // if (body.id) {
+            //     const
+            //     return Note.findByIdAndUpdate(
+            //         body.id,
+            //         { paragraphs, title, book, fromUserId },
+            //         { new: true }
+            //     ).exec();
+            // } else {
+            //     const paragraphTextArr =
+            //         text
+            //             ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+            //             .split('|') ?? [];
+            //     const paragraphs = paragraphTextArr.map(t => ({ text: t }));
+            //     return Note.create({ paragraphs, title, book, fromUserId });
+            // }
             default:
                 return null;
         }

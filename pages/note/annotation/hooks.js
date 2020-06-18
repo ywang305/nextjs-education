@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
+import fetchAsync from '../../../lib/fetchAsync';
 
 export const usePopover = () => {
     // const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,13 +24,7 @@ export const usePopover = () => {
         // setAnchorEl(null);
     };
 
-    return [
-        selectText,
-        setSelectText,
-        anchorPosition,
-        openPopover,
-        closePopoverHandler,
-    ];
+    return [selectText, anchorPosition, openPopover, closePopoverHandler];
 };
 
 export const usePlaySpeech = () => {
@@ -57,6 +53,47 @@ export const useLoopSpeech = () => {
 export const useEditAnnoDlg = () => {
     const [openDlg, setOpenDlg] = useState(false);
     return [openDlg, setOpenDlg];
+};
+
+export const useQueryDict = selectedWord => {
+    const [dict, setDict] = useState(null);
+
+    useEffect(() => {
+        const query = async () => {
+            const res = await fetchAsync(
+                '/api/dicts/' + encodeURI(selectedWord)
+            );
+            if (res?.label) {
+                setDict(res.label);
+            }
+        };
+        if (selectedWord?.length > 1) query();
+    }, [selectedWord]);
+
+    return [dict];
+};
+
+export const useAddCommentsToServer = () => {
+    const {
+        query: { note_id },
+    } = useRouter();
+
+    const clickToAdd = async (parag_id, addedComments, commentsCallback) => {
+        const comments = await fetchAsync('/api/note/comment', {
+            method: 'POST',
+            body: {
+                note_id,
+                parag_id,
+                comments: addedComments,
+            },
+        });
+        commentsCallback?.(comments);
+    };
+    const getComments = async (parag_id, commentsCallback) => {
+        await clickToAdd(parag_id, undefined, commentsCallback);
+    };
+
+    return [clickToAdd, getComments];
 };
 
 export default () => {};

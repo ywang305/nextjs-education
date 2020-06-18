@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import InputArticle from './InputArticle';
 import NoteList from './NoteList';
 import Fab from '@material-ui/core/Fab';
-import CreateIcon from '@material-ui/icons/Create';
+import NoteAddIcon from '@material-ui/icons/NoteAddOutlined';
 import { useTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 
@@ -18,14 +18,16 @@ const NotePage = () => {
             <Link href='/note/InputArticle'>
                 <Fab
                     aria-label='create note fab'
+                    variant='extended'
                     color='secondary'
                     style={{
                         position: 'fixed',
-                        bottom: theme.spacing(2),
-                        right: theme.spacing(2),
+                        bottom: theme.spacing(4),
+                        right: theme.spacing(4),
                     }}
                 >
-                    <CreateIcon />
+                    <NoteAddIcon />
+                    <Box px={2}>添加</Box>
                 </Fab>
             </Link>
         </div>

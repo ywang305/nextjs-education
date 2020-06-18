@@ -8,38 +8,36 @@ import Link from 'next/link';
 import Route from 'next/router';
 
 const InputWords = () => {
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
+    const [article, setArticle] = useState({ book: '', title: '', text: '' });
+    const { book, title, text } = article;
 
     const changeHandler = useCallback(e => {
         const { name, value } = e.target;
-        switch (name) {
-            case 'title':
-                setTitle(value);
-                break;
-            case 'text':
-                setText(value);
-                break;
-        }
+        setArticle(p => ({ ...p, [name]: value }));
     }, []);
-    const submitHandler = useCallback(
-        async e => {
-            e.preventDefault();
-            if (title && text) {
-                const url = '/api/note';
-                const fromUserId = undefined;
-                const res = await fetchAsync(url, {
-                    method: 'POST',
-                    body: { fromUserId, title, text },
-                });
-                Route.back();
-            }
-        },
-        [title, text]
-    );
+    const submitHandler = async e => {
+        e.preventDefault();
+        if (book && title && text) {
+            const url = '/api/note';
+            const fromUserId = undefined;
+            const res = await fetchAsync(url, {
+                method: 'POST',
+                body: { fromUserId, book, title, text },
+            });
+            Route.back();
+        }
+    };
 
     return (
         <form onSubmit={submitHandler} onChange={changeHandler}>
+            <TextField
+                name='book'
+                fullWidth
+                label='Book'
+                value={book}
+                variant='outlined'
+                margin='normal'
+            />
             <TextField
                 name='title'
                 fullWidth
@@ -48,12 +46,15 @@ const InputWords = () => {
                 variant='outlined'
                 margin='normal'
             />
-            <TextareaAutosize
-                name='text'
-                style={{ width: '100%' }}
-                rowsMin={6}
-                placeholder='Input Article'
-            />
+            <Box py={1} pr={1}>
+                <TextareaAutosize
+                    name='text'
+                    style={{ width: '100%' }}
+                    rowsMin={10}
+                    placeholder='Input Article'
+                    value={text}
+                />
+            </Box>
             <Box py={1} display='flex' justifyContent='flex-end'>
                 <Box mx={2}>
                     <Button color='primary' onClick={() => Route.back()}>

@@ -1,5 +1,4 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import TextField from '@material-ui/core/TextField';
 import {
     Box,
     Typography,
@@ -9,9 +8,12 @@ import {
     Avatar,
     IconButton,
     CardContent,
+    Fab,
 } from '@material-ui/core';
 
 import { useRouter } from 'next/router';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import fetchAsync from '../../lib/fetchAsync';
 import Paragraph from './annotation/Paragraph';
 // import SpeechSetting from './setting/SpeechSetting';
@@ -25,15 +27,18 @@ const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
 const useNote = () => {
     const { query } = useRouter();
     const { note_id } = query;
+    const url = '/api/note/' + note_id;
+
     const [note, setNote] = useState({
         _id: '',
+        book: '',
         title: '',
-        text: '',
+        paragraphs: [],
         updatedAt: '',
     });
     useEffect(() => {
         const reqNote = async () => {
-            const note = await fetchAsync('/api/note/' + note_id);
+            const note = await fetchAsync(url);
             setNote(note);
         };
         if (note_id) {
@@ -41,10 +46,7 @@ const useNote = () => {
         }
     }, [note_id]);
 
-    const paragraphs =
-        note?.text?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|') ?? [];
-
-    return [note._id, note.title, note.updatedAt, paragraphs];
+    return [note._id, note.book, note.title, note.updatedAt, note.paragraphs];
 };
 
 const useSingle = () => {
@@ -58,7 +60,7 @@ const useAnnoToggle = () => {
 };
 
 const Note = () => {
-    const [_id, title, updatedAt, paragraphs] = useNote();
+    const [_id, book, title, updatedAt, paragraphs] = useNote();
     const [singleMode, setSingleMode, paragIndex, setParagIndex] = useSingle();
     const [annoOpen, setAnnoOpen] = useAnnoToggle();
 
@@ -86,24 +88,50 @@ const Note = () => {
                 subheader={_id ? new Date(updatedAt).toLocaleString() : ''}
             />
             <CardContent>
+                {singleMode && (
+                    <Box display='flex' justifyContent='space-between' pb={2}>
+                        <Fab
+                            variant='extended'
+                            color='secondary'
+                            onClick={() => setParagIndex(paragIndex - 1)}
+                            disabled={paragIndex === 0}
+                        >
+                            <NavigateBeforeIcon />
+                            上句
+                        </Fab>
+                        <Fab
+                            variant='extended'
+                            color='secondary'
+                            onClick={() => setParagIndex(paragIndex + 1)}
+                            disabled={paragIndex === paragraphs.length - 1}
+                        >
+                            下句
+                            <NavigateNextIcon />
+                        </Fab>
+                    </Box>
+                )}
                 {singleMode ? (
                     <Paragraph
                         focused
-                        text={paragraphs[paragIndex ?? 0]}
+                        paragraph={paragraphs[paragIndex ?? 0]}
                         annoOpen={annoOpen}
+                        setAnnoOpen={setAnnoOpen}
                     />
                 ) : (
-                    paragraphs.map((parag, i) => {
+                    paragraphs.map((paragraph, i) => {
                         const focused = paragIndex === i;
                         return (
                             <Paragraph
-                                key={i}
+                                key={paragraph?._id}
                                 focused={focused}
-                                text={parag}
+                                paragraph={paragraph}
                                 setParagIndex={() => {
                                     if (!focused) setParagIndex(i);
                                 }}
                                 annoOpen={annoOpen}
+                                setAnnoOpen={setAnnoOpen}
+                                singleMode={singleMode}
+                                setSingleMode={setSingleMode}
                             />
                         );
                     })

@@ -50,7 +50,7 @@ const EditAnnoDlg = ({ annotatedText, open, onClose }) => {
                     />
                     <Box>
                         <Button color='primary' variant='contained' fullWidth>
-                            Submit
+                            确定
                         </Button>
                     </Box>
                 </form>
