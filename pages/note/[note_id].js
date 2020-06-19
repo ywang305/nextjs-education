@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
     Box,
     Typography,
@@ -9,6 +10,7 @@ import {
     IconButton,
     CardContent,
     Fab,
+    Button,
 } from '@material-ui/core';
 
 import { useRouter } from 'next/router';
@@ -23,61 +25,53 @@ import dynamic from 'next/dynamic';
 const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
     ssr: false,
 });
+import {
+    getNoteThunk,
+    setNoteSettingCreator,
+} from '../../lib/store/note/action';
 
-const useNote = () => {
+export const useNote = () => {
     const { query } = useRouter();
     const { note_id } = query;
-    const url = '/api/note/' + note_id;
-
-    const [note, setNote] = useState({
-        _id: '',
-        book: '',
-        title: '',
-        paragraphs: [],
-        updatedAt: '',
-    });
+    const dispatch = useDispatch();
+    const note = useSelector(state => state.note.note);
     useEffect(() => {
-        const reqNote = async () => {
-            const note = await fetchAsync(url);
-            setNote(note);
-        };
-        if (note_id) {
-            reqNote();
-        }
-    }, [note_id]);
-
-    return [note._id, note.book, note.title, note.updatedAt, note.paragraphs];
+        if (!note?._id && note_id) dispatch(getNoteThunk(note_id));
+    }, [note?._id, note_id]);
+    return [note];
 };
 
-const useSingle = () => {
-    const [paragIndex, setParagIndex] = useState(null); // track current reading paragraph
-    const [singleMode, setSingleMode] = useState(false);
-    return [singleMode, setSingleMode, paragIndex, setParagIndex];
-};
-const useAnnoToggle = () => {
-    const [annoOpen, setAnnoOpen] = useState(false);
-    return [annoOpen, setAnnoOpen];
+export const useSetting = () => {
+    const dispatch = useDispatch();
+    const setting = useSelector(state => state.note.setting);
+    const dispatchSetting = settingObj => {
+        dispatch(setNoteSettingCreator({ ...setting, ...settingObj }));
+    };
+
+    return [setting, dispatchSetting];
 };
 
 const Note = () => {
-    const [_id, book, title, updatedAt, paragraphs] = useNote();
-    const [singleMode, setSingleMode, paragIndex, setParagIndex] = useSingle();
-    const [annoOpen, setAnnoOpen] = useAnnoToggle();
+    const [note] = useNote();
+    const [setting, dispatchSetting] = useSetting();
+
+    const { _id, book, title, updatedAt, paragraphs } = note ?? {};
+    const { single, annoOpen, paragIndex } = setting;
 
     return (
         <Card>
             <CardHeader
-                avatar={<Avatar alt='新概念' src='/xgn.jpeg' />}
+                avatar={<Avatar alt={book} src='/xgn.jpeg' />}
                 action={
                     <Box display='flex' alignItems='center'>
                         <Box>
                             <SingleMode
-                                singleMode={singleMode}
-                                setSingleMode={setSingleMode}
+                                checked={single}
+                                dispatchSetting={dispatchSetting}
                             />
                             <AnnoToggle
-                                annoOpen={annoOpen}
-                                setAnnoOpen={setAnnoOpen}
+                                checked={annoOpen}
+                                dispatchSetting={dispatchSetting}
                             />
                         </Box>
                         <Divider orientation='vertical' flexItem />
@@ -85,53 +79,48 @@ const Note = () => {
                     </Box>
                 }
                 title={title}
-                subheader={_id ? new Date(updatedAt).toLocaleString() : ''}
+                subheader={book}
             />
             <CardContent>
-                {singleMode && (
+                {single && (
                     <Box display='flex' justifyContent='space-between' pb={2}>
-                        <Fab
-                            variant='extended'
+                        <Button
+                            variant='outlined'
                             color='secondary'
-                            onClick={() => setParagIndex(paragIndex - 1)}
+                            onClick={() =>
+                                dispatchSetting({ paragIndex: paragIndex - 1 })
+                            }
                             disabled={paragIndex === 0}
                         >
                             <NavigateBeforeIcon />
                             上句
-                        </Fab>
-                        <Fab
-                            variant='extended'
+                        </Button>
+                        <Button
+                            variant='outlined'
                             color='secondary'
-                            onClick={() => setParagIndex(paragIndex + 1)}
-                            disabled={paragIndex === paragraphs.length - 1}
+                            onClick={() =>
+                                dispatchSetting({ paragIndex: paragIndex + 1 })
+                            }
+                            disabled={paragIndex === paragraphs?.length - 1}
                         >
                             下句
                             <NavigateNextIcon />
-                        </Fab>
+                        </Button>
                     </Box>
                 )}
-                {singleMode ? (
+                {single ? (
                     <Paragraph
                         focused
                         paragraph={paragraphs[paragIndex ?? 0]}
-                        annoOpen={annoOpen}
-                        setAnnoOpen={setAnnoOpen}
                     />
                 ) : (
-                    paragraphs.map((paragraph, i) => {
+                    paragraphs?.map((paragraph, i) => {
                         const focused = paragIndex === i;
                         return (
                             <Paragraph
                                 key={paragraph?._id}
                                 focused={focused}
                                 paragraph={paragraph}
-                                setParagIndex={() => {
-                                    if (!focused) setParagIndex(i);
-                                }}
-                                annoOpen={annoOpen}
-                                setAnnoOpen={setAnnoOpen}
-                                singleMode={singleMode}
-                                setSingleMode={setSingleMode}
                             />
                         );
                     })

@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import StopIcon from '@material-ui/icons/Stop';
 import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
-import { updateDeviceSpeechUtteranceCreator } from '../../../lib/store/device/action';
+import { setSpeechOptionCreator } from '../../../lib/store/note/action';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const useMenu = () => {
@@ -29,7 +29,7 @@ const useMenu = () => {
 
 const useSetting = () => {
     const dispatch = useDispatch();
-    const speech = useSelector(state => state.device.speech);
+    const speech = useSelector(state => state.note.speech);
     const [pitch, setPitch] = useState(speech.pitch);
     const [rate, setRate] = useState(speech.rate);
     const [voiceName, setVoiceName] = useState(speech.voiceName);
@@ -42,7 +42,7 @@ const useSetting = () => {
                 voiceName != speech.voiceName
             ) {
                 dispatch(
-                    updateDeviceSpeechUtteranceCreator({
+                    setSpeechOptionCreator({
                         pitch,
                         rate,
                         voiceName,

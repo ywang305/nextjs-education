@@ -39,12 +39,14 @@ function MyApp({ Component, pageProps }) {
     return (
         <div>
             <Provider store={store}>
-                <PersistGateWithRouter persistor={persistor} loading={null}>
+                {/* <PersistGateWithRouter persistor={persistor} loading={null}> */}
+                <PersistGate persistor={persistor} loading={null}>
                     <MuiThemeProvider theme={theme}>
                         <ButtonAppBar />
                         <Component {...pageProps} />
                     </MuiThemeProvider>
-                </PersistGateWithRouter>
+                </PersistGate>
+                {/* </PersistGateWithRouter> */}
             </Provider>
         </div>
     );

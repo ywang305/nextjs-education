@@ -25,72 +25,20 @@ import AlertIOS from '../../components/AlertIOS';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import StopIcon from '@material-ui/icons/Stop';
 import Avatar from '@material-ui/core/Avatar';
-import WorkIcon from '@material-ui/icons/Work';
-import AcUnitIcon from '@material-ui/icons/AcUnit';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
-import AdbIcon from '@material-ui/icons/Adb';
-import AirlineSeatReclineExtraIcon from '@material-ui/icons/AirlineSeatReclineExtra';
-import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
-import AppleIcon from '@material-ui/icons/Apple';
-import AndroidIcon from '@material-ui/icons/Android';
-import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
-import AudiotrackIcon from '@material-ui/icons/Audiotrack';
-import BathtubIcon from '@material-ui/icons/Bathtub';
-import BuildIcon from '@material-ui/icons/Build';
-import ChildFriendlyIcon from '@material-ui/icons/ChildFriendly';
-import CommuteIcon from '@material-ui/icons/Commute';
-import DeckIcon from '@material-ui/icons/Deck';
-import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
-import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
-import FingerprintIcon from '@material-ui/icons/Fingerprint';
-import FlashAutoIcon from '@material-ui/icons/FlashAuto';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import RestaurantIcon from '@material-ui/icons/Restaurant';
-
-const icons = [
-    BeachAccessIcon,
-    WorkIcon,
-    AcUnitIcon,
-    AdbIcon,
-    AirlineSeatReclineExtraIcon,
-    AllInclusiveIcon,
-    AppleIcon,
-    AndroidIcon,
-    AttachMoneyIcon,
-    AudiotrackIcon,
-    BathtubIcon,
-    BuildIcon,
-    ChildFriendlyIcon,
-    CommuteIcon,
-    DeckIcon,
-    DirectionsBikeIcon,
-    DirectionsRunIcon,
-    FingerprintIcon,
-    FlashAutoIcon,
-    GitHubIcon,
-    RestaurantIcon,
-];
 
 import {
     usePopover,
     usePlaySpeech,
     useLoopSpeech,
     useQueryDict,
-    useAddCommentsToServer,
+    useAddComment,
 } from './hooks';
-import EditAnnoDlg from './EditAnnoDlg';
 import AddAnno from './AddAnno';
-import fetchAsync from '../../../lib/fetchAsync';
+import { useNote, useSetting } from '../[note_id]';
+import AddImage from './AddImage';
 
-const Paragraph = ({
-    paragraph,
-    focused = false,
-    setParagIndex,
-    annoOpen,
-    setAnnoOpen,
-    singleMode,
-    setSingleMode,
-}) => {
+const Paragraph = ({ paragraph, focused = false }) => {
     const [
         selectText,
         anchorPosition,
@@ -101,22 +49,31 @@ const Paragraph = ({
     const [clickLoopHandler, cancelLoop, speakingLoop] = useLoopSpeech();
     const [dict] = useQueryDict(selectText);
 
-    const [clickToAdd, getComments] = useAddCommentsToServer();
+    const [{ single, annoOpen, paragIndex }, dispatchSetting] = useSetting();
+    const [note] = useNote();
 
-    const [comments, setComments] = useState(paragraph?.comments);
-    useEffect(() => {
-        getComments(paragraph._id, cms => setComments(cms));
-    }, [paragraph._id]);
+    const myParagIndex = note?.paragraphs?.findIndex(
+        p => p._id === paragraph._id
+    );
+
+    const [addCommentHandler] = useAddComment();
 
     return (
-        <div onClick={setParagIndex}>
-            <Box borderRadius={8} borderColor='grey.500'>
+        <div
+            onClick={() => {
+                if (myParagIndex !== paragIndex)
+                    dispatchSetting({ paragIndex: myParagIndex });
+            }}
+        >
+            <Box>
                 <div
                     onDoubleClick={() => {
-                        if (!annoOpen && !singleMode) {
-                            setSingleMode?.(s => !s);
-                            setAnnoOpen?.(a => !a);
-                            setParagIndex?.();
+                        if (!annoOpen && !single) {
+                            dispatchSetting({
+                                single: true,
+                                annoOpen: true,
+                                paragIndex: myParagIndex,
+                            });
                         }
                     }}
                 >
@@ -125,8 +82,8 @@ const Paragraph = ({
                         onPointerUp={openPopover}
                         style={{
                             backgroundColor: focused ? grey[50] : 'transparent',
-                            ['user-select']: 'text',
-                            ['-webkit-user-select']: 'text',
+                            UserSelect: 'text',
+                            WebkitUserSelect: 'text',
                         }}
                     >
                         {paragraph?.text}
@@ -135,11 +92,20 @@ const Paragraph = ({
 
                 <Collapse in={annoOpen}>
                     <>
+                        <Box>
+                            {paragraph?.images?.map((m, i) => (
+                                <img key={i} src={m} alt='注解图片' />
+                            ))}
+                        </Box>
                         {focused && (
-                            <AddAnno
-                                commentsCallback={cmts => setComments(cmts)}
-                                parag_id={paragraph?._id}
-                            />
+                            <Box>
+                                <Box px={1} component='span'>
+                                    <AddImage parag_id={paragraph?._id} />
+                                </Box>
+                                <Box px={1} component='span'>
+                                    <AddAnno parag_id={paragraph?._id} />
+                                </Box>
+                            </Box>
                         )}
                         <List
                             aria-labelledby='nested-list-subheader'
@@ -152,17 +118,13 @@ const Paragraph = ({
                                 </ListSubheader>
                             }
                         >
-                            {comments?.map((commObj, j) => {
-                                const RandomIcon =
-                                    icons[
-                                        Math.floor(Math.random() * icons.length)
-                                    ];
+                            {paragraph?.comments?.map((commObj, j) => {
                                 const { text, fromUserId, updatedAt } = commObj;
                                 return (
                                     <ListItem key={j}>
                                         <ListItemAvatar>
                                             <Avatar>
-                                                <RandomIcon />
+                                                <GitHubIcon />
                                             </Avatar>
                                         </ListItemAvatar>
                                         <ListItemText
@@ -227,11 +189,11 @@ const Paragraph = ({
                                             text: selectText + ': ' + dict,
                                         },
                                     ];
-                                    await clickToAdd(
+                                    addCommentHandler(
+                                        note?._id,
                                         paragraph._id,
-                                        addedComments,
-                                        cms => setComments(cms)
-                                    );
+                                        addedComments
+                                    )();
                                     closePopoverHandler();
                                 }}
                             >

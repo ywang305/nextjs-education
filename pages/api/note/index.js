@@ -13,6 +13,7 @@ export const commentSchema = new Schema(
 export const paragraphSchema = new Schema({
     text: String,
     comments: [commentSchema],
+    images: [String], //urls
 });
 
 export const noteSchema = new Schema(
@@ -32,9 +33,8 @@ export default async (req, res) => {
         switch (method) {
             case 'GET':
                 return Note.find({})
-                    .sort('-updated')
-                    .limit(10)
                     .select('book title fromUserId updatedAt')
+                    .sort('-updated')
                     .exec();
             case 'POST':
                 const { book, title, fromUserId, text } = body;

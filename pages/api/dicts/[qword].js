@@ -6,8 +6,21 @@ export default async (req, res) => {
     const { qword } = query;
 
     const response = await fetch(
-        'https://dict.eudic.net/dicts/prefix/' + qword
+        'https://dict.iciba.com/dictionary/word/suggestion?word=' +
+            qword +
+            '&nums=1&is_need_mean=1'
     );
-    const list = await response.json();
-    res.status(200).json({ label: list?.[0]?.label });
+    const { message } = await response.json();
+    let label = message?.[0]?.means
+        ?.map(({ part, means }) => {
+            return part + ' ' + means.join(', ');
+        })
+        .join('; ');
+    if (!label) {
+        const list = await fetch(
+            'https://dict.eudic.net/dicts/prefix/' + qword
+        );
+        label = list?.[0].label;
+    }
+    res.status(200).json({ label });
 };

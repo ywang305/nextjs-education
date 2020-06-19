@@ -3,9 +3,9 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-export default function SingleMode({ singleMode, setSingleMode }) {
+export default function SingleMode({ checked, dispatchSetting }) {
     const handleChange = event => {
-        setSingleMode(event.target.checked);
+        dispatchSetting({ single: event.target.checked });
     };
 
     return (
@@ -13,7 +13,7 @@ export default function SingleMode({ singleMode, setSingleMode }) {
             <FormControlLabel
                 control={
                     <Switch
-                        checked={singleMode}
+                        checked={checked}
                         onChange={handleChange}
                         color='secondary'
                     />

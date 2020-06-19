@@ -31,28 +31,26 @@ const NoteList = () => {
                 </ListSubheader>
             }
         >
-            {list
-                ?.filter(item => item._id && item.title)
-                .map(item => {
-                    const { _id, book, title, updatedAt } = item;
-                    return (
-                        <ListItem
-                            button
-                            key={_id}
-                            onClick={() => {
-                                Router.push(`/note/${_id}`);
-                            }}
-                        >
-                            <ListItemIcon>
-                                <DescriptionIcon />
-                            </ListItemIcon>
-                            <ListItemText
-                                primary={`${book ? book + ',  ' : ''}${title}`}
-                                secondary={new Date(updatedAt).toLocaleString()}
-                            />
-                        </ListItem>
-                    );
-                })}
+            {list?.map(item => {
+                const { _id, book, title, updatedAt } = item;
+                return (
+                    <ListItem
+                        button
+                        key={_id}
+                        onClick={() => {
+                            Router.push(`/note/${_id}`);
+                        }}
+                    >
+                        <ListItemIcon>
+                            <DescriptionIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary={`${book ? book + ',  ' : ''}${title}`}
+                            secondary={new Date(updatedAt).toLocaleString()}
+                        />
+                    </ListItem>
+                );
+            })}
         </List>
     );
 };

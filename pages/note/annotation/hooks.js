@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
 import fetchAsync from '../../../lib/fetchAsync';
+import { postCommentsThunk } from '../../../lib/store/note/action';
 
 export const usePopover = () => {
     // const [anchorEl, setAnchorEl] = React.useState(null);
@@ -73,27 +74,12 @@ export const useQueryDict = selectedWord => {
     return [dict];
 };
 
-export const useAddCommentsToServer = () => {
-    const {
-        query: { note_id },
-    } = useRouter();
-
-    const clickToAdd = async (parag_id, addedComments, commentsCallback) => {
-        const comments = await fetchAsync('/api/note/comment', {
-            method: 'POST',
-            body: {
-                note_id,
-                parag_id,
-                comments: addedComments,
-            },
-        });
-        commentsCallback?.(comments);
+export const useAddComment = () => {
+    const dispatch = useDispatch();
+    const addCommentsHandler = (note_id, parag_id, comments) => async () => {
+        await dispatch(postCommentsThunk(note_id, parag_id, comments));
     };
-    const getComments = async (parag_id, commentsCallback) => {
-        await clickToAdd(parag_id, undefined, commentsCallback);
-    };
-
-    return [clickToAdd, getComments];
+    return [addCommentsHandler];
 };
 
 export default () => {};

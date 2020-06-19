@@ -3,9 +3,9 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
-export default function AnnoToggle({ annoOpen, setAnnoOpen }) {
+export default function AnnoToggle({ checked, dispatchSetting }) {
     const handleChange = event => {
-        setAnnoOpen(event.target.checked);
+        dispatchSetting({ annoOpen: event.target.checked });
     };
 
     return (
@@ -13,7 +13,7 @@ export default function AnnoToggle({ annoOpen, setAnnoOpen }) {
             <FormControlLabel
                 control={
                     <Switch
-                        checked={annoOpen}
+                        checked={checked}
                         onChange={handleChange}
                         color='secondary'
                     />

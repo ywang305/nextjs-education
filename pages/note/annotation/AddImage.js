@@ -1,15 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import {
-    Box,
-    Typography,
-    IconButton,
-    Divider,
-    Button,
-    TextField,
-} from '@material-ui/core';
+import { Box, Button, TextField } from '@material-ui/core';
 import fetchAsync from '../../../lib/fetchAsync';
 import { useRouter } from 'next/router';
-import { postCommentsThunk } from '../../../lib/store/note/action';
+import {
+    postCommentsThunk,
+    postImageUrlsThunk,
+} from '../../../lib/store/note/action';
 import { useDispatch } from 'react-redux';
 
 export const useComment = parag_id => {
@@ -18,48 +14,44 @@ export const useComment = parag_id => {
         query: { note_id },
     } = useRouter();
 
-    const [editAnno, setEditAnno] = useState({ open: false, text: '' });
+    const [editAnno, setEditAnno] = useState({ open: false, url: '' });
     const clickOpen = () => {
-        setEditAnno({ open: true, text: '' });
+        setEditAnno({ open: true, url: '' });
     };
     const changeText = e =>
         setEditAnno(a => ({
             ...a,
-            text: e.target?.value,
+            url: e.target?.value,
         }));
 
     const clickCancel = () => {
         setEditAnno({
             open: false,
-            text: '',
+            url: '',
         });
     };
 
     const clickConfirmToSubmit = async () => {
-        const newComments = editAnno.text?.split('\n').map(c => ({
-            text: c,
-            fromUserId: undefined,
-        }));
-        dispatch(postCommentsThunk(note_id, parag_id, newComments));
-
+        const newURLs = editAnno.url?.split('\n');
+        dispatch(postImageUrlsThunk(note_id, parag_id, newURLs));
         clickCancel();
     };
 
     return [
         clickConfirmToSubmit,
         editAnno.open,
-        editAnno.text,
+        editAnno.url,
         clickOpen,
         changeText,
         clickCancel,
     ];
 };
 
-const AddAnno = ({ parag_id }) => {
+const AddImage = ({ parag_id }) => {
     const [
         clickConfirmToSubmit,
         open,
-        text,
+        url,
         clickOpen,
         changeText,
         clickCancel,
@@ -67,7 +59,7 @@ const AddAnno = ({ parag_id }) => {
 
     return !open ? (
         <Button variant='outlined' color='primary' onClick={clickOpen}>
-            为这句添加笔记
+            为这句添加图片
         </Button>
     ) : (
         <Box border={1} borderRadius={8} p={2}>
@@ -75,12 +67,12 @@ const AddAnno = ({ parag_id }) => {
                 color='primary'
                 variant='outlined'
                 fullWidth
-                label='添加笔记'
+                label='添加图片链接'
                 multiline
                 rows={3}
-                value={text}
+                value={url}
                 onChange={changeText}
-                helperText='可以使用换行键，添加多条笔记'
+                helperText='可以使用换行键，添加多条图片链接'
             />
             <Box display='flex' justifyContent='flex-end'>
                 <Box pr={4}>
@@ -102,4 +94,4 @@ const AddAnno = ({ parag_id }) => {
     );
 };
 
-export default AddAnno;
+export default AddImage;
