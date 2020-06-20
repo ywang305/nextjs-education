@@ -22,5 +22,7 @@ export default async (req, res) => {
         );
         label = list?.[0].label;
     }
+    // todo : fanyi
+
     res.status(200).json({ label });
 };
