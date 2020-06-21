@@ -14,7 +14,9 @@ export default async (req, res) => {
                     userId,
                 }).exec();
                 if (userId === foundUser?.userId) {
-                    return null;
+                    return {
+                        error: `The username ${userId} has already existed`,
+                    };
                 }
                 const user = await User.create({ userId, password });
                 return user;

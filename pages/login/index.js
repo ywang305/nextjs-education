@@ -8,17 +8,11 @@ import Alert from '@material-ui/lab/Alert';
 import { loginThunk } from '../../lib/store/login/action';
 import { useDispatch } from 'react-redux';
 import Router from 'next/router';
+import AlertSnackbar from '../components/AlertSnackbar';
 
 const useLogin = () => {
     // alert
     const [error, setError] = useState('');
-
-    const onAlertClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-        setError('');
-    };
 
     // -- login
 
@@ -42,7 +36,7 @@ const useLogin = () => {
         }
     };
 
-    return [credential, changeHandler, clickToLogin, error, onAlertClose];
+    return [credential, changeHandler, clickToLogin, error, setError];
 };
 
 const LoginPage = () => {
@@ -51,7 +45,7 @@ const LoginPage = () => {
         changeHandler,
         clickToLogin,
         error,
-        onAlertClose,
+        setError,
     ] = useLogin();
     const { userId, password } = credential;
 
@@ -88,20 +82,11 @@ const LoginPage = () => {
                     <Link href='/login/signup'>New User ?</Link>
                 </form>
             </Box>
-            <Snackbar
-                open={Boolean(error)}
-                autoHideDuration={6000}
-                onClose={onAlertClose}
-            >
-                <Alert
-                    onClose={onAlertClose}
-                    severity='error'
-                    elevation={6}
-                    variant='filled'
-                >
-                    {error}
-                </Alert>
-            </Snackbar>
+            <AlertSnackbar
+                message={error}
+                setMessage={setError}
+                severity='error'
+            />
         </Box>
     );
 };

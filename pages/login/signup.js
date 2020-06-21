@@ -4,8 +4,13 @@ import { useTheme } from '@material-ui/core/styles';
 import { Box, TextField, Button } from '@material-ui/core';
 import { signupThunk } from '../../lib/store/login/action';
 import { useDispatch } from 'react-redux';
+import Router from 'next/router';
+
+import AlertSnackbar from '../components/AlertSnackbar';
 
 const useSignup = () => {
+    const [msg, setMsg] = useState('');
+
     const [credential, setCredential] = useState({
         userId: '',
         password: '',
@@ -25,16 +30,21 @@ const useSignup = () => {
             userId.length > 0
         ) {
             const user = await dispatch(signupThunk(userId, password));
+            if (user?.error) {
+                setMsg(user.error);
+            } else if (user?.userId) {
+                Router.replace('/');
+            }
         }
     };
 
-    return [credential, changeHandler, clickToLogin];
+    return [credential, changeHandler, clickToLogin, msg, setMsg];
 };
 
 const LoginPage = () => {
     const theme = useTheme();
 
-    const [credential, changeHandler, clickToLogin] = useSignup();
+    const [credential, changeHandler, clickToLogin, msg, setMsg] = useSignup();
     const { userId, password, repeatpassword } = credential;
 
     const repeatError = !password.startsWith(repeatpassword);
@@ -77,6 +87,7 @@ const LoginPage = () => {
                     </Button>
                 </form>
             </Box>
+            <AlertSnackbar message={msg} setMessage={setMsg} severity='error' />
         </Box>
     );
 };

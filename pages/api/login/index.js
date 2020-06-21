@@ -18,7 +18,7 @@ export default async (req, res) => {
                     userId,
                     password,
                 }).exec();
-                return foundUser;
+                return foundUser ?? { error: 'Invalid UserName/Password' };
         }
     };
     restHandler(req, res, queryHandler);

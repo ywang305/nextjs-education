@@ -40,9 +40,8 @@ export function ButtonAppBar() {
                 <Box style={{ flexGrow: 1 }} />
                 {links.map(l => {
                     if (l === 'login' && userId) {
-                        l = 'profile';
                         return (
-                            <Link href={'/' + l} key={l}>
+                            <Link href={'/profile'} key={l + '_profile'}>
                                 <IconButton color='inherit'>
                                     <AccountCircleIcon />
                                 </IconButton>
