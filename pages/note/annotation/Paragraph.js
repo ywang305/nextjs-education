@@ -37,6 +37,7 @@ import {
 import AddAnno from './AddAnno';
 import { useNote, useSetting } from '../[note_id]';
 import AddImage from './AddImage';
+import AddTrans from './AddTrans';
 
 const Paragraph = ({ paragraph, focused = false }) => {
     const [
@@ -49,7 +50,10 @@ const Paragraph = ({ paragraph, focused = false }) => {
     const [clickLoopHandler, cancelLoop, speakingLoop] = useLoopSpeech();
     const [dict] = useQueryDict(selectText);
 
-    const [{ single, annoOpen, paragIndex }, dispatchSetting] = useSetting();
+    const [
+        { single, annoOpen, paragIndex, transOpen },
+        dispatchSetting,
+    ] = useSetting();
     const [note] = useNote();
 
     const myParagIndex = note?.paragraphs?.findIndex(
@@ -88,6 +92,7 @@ const Paragraph = ({ paragraph, focused = false }) => {
                     >
                         {paragraph?.text}
                     </Typography>
+                    {transOpen && <AddTrans paragraph={paragraph} />}
                 </div>
 
                 <Collapse in={annoOpen}>

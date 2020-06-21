@@ -11,6 +11,7 @@ import fetchAsync from '../../../lib/fetchAsync';
 import { useRouter } from 'next/router';
 import { postCommentsThunk } from '../../../lib/store/note/action';
 import { useDispatch } from 'react-redux';
+import { useProfile } from '../../login/profile';
 
 export const useComment = parag_id => {
     const dispatch = useDispatch();
@@ -55,51 +56,49 @@ export const useComment = parag_id => {
     ];
 };
 
-const AddAnno = ({ parag_id }) => {
-    const [
-        clickConfirmToSubmit,
-        open,
-        text,
-        clickOpen,
-        changeText,
-        clickCancel,
-    ] = useComment(parag_id);
+const AddTrans = ({ paragraph }) => {
+    const { _id, trans } = paragraph;
+    const [_, isSuperUser] = useProfile();
 
-    return !open ? (
-        <Button variant='outlined' color='primary' onClick={clickOpen}>
-            为这句添加笔记
-        </Button>
-    ) : (
-        <Box border={1} borderRadius={8} p={2}>
-            <TextField
-                color='primary'
-                variant='outlined'
-                fullWidth
-                label='添加笔记'
-                multiline
-                rows={3}
-                value={text}
-                onChange={changeText}
-                helperText='可以使用换行键，添加多条笔记'
-            />
-            <Box display='flex' justifyContent='flex-end'>
-                <Box pr={4}>
-                    <Button
-                        onClick={clickConfirmToSubmit}
-                        variant='contained'
-                        color='primary'
-                    >
-                        提交
-                    </Button>
-                </Box>
-                <Box>
-                    <Button onClick={clickCancel} variant='outlined'>
-                        取消
-                    </Button>
+    if (isSuperUser) {
+        return (
+            <Box>
+                <TextField
+                    color='primary'
+                    variant='outlined'
+                    fullWidth
+                    label='输入翻译'
+                    value={trans}
+                    // onChange={changeText}
+                />
+
+                <Box display='flex' justifyContent='flex-end'>
+                    <Box pr={4}>
+                        <Button
+                            // onClick={clickConfirmToSubmit}
+                            variant='contained'
+                            color='primary'
+                        >
+                            提交
+                        </Button>
+                    </Box>
+                    <Box>
+                        <Button
+                            // onClick={clickCancel}
+                            variant='outlined'
+                        >
+                            取消
+                        </Button>
+                    </Box>
                 </Box>
             </Box>
-        </Box>
+        );
+    }
+    return (
+        <Typography paragraph color='textSecondary'>
+            {paragraph?.trans}
+        </Typography>
     );
 };
 
-export default AddAnno;
+export default AddTrans;

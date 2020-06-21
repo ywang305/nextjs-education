@@ -21,6 +21,7 @@ import Paragraph from './annotation/Paragraph';
 // import SpeechSetting from './setting/SpeechSetting';
 import SingleMode from './setting/SingleMode';
 import AnnoToggle from './setting/AnnoToggle';
+import TransToggle from './setting/TransToggle';
 import dynamic from 'next/dynamic';
 const SpeechSetting = dynamic(() => import('./setting/SpeechSetting'), {
     ssr: false,
@@ -56,7 +57,7 @@ const Note = () => {
     const [setting, dispatchSetting] = useSetting();
 
     const { _id, book, title, updatedAt, paragraphs } = note ?? {};
-    const { single, annoOpen, paragIndex } = setting;
+    const { single, annoOpen, paragIndex, transOpen } = setting;
 
     return (
         <Card>
@@ -71,6 +72,10 @@ const Note = () => {
                             />
                             <AnnoToggle
                                 checked={annoOpen}
+                                dispatchSetting={dispatchSetting}
+                            />
+                            <TransToggle
+                                checked={transOpen}
                                 dispatchSetting={dispatchSetting}
                             />
                         </Box>

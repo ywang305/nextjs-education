@@ -7,9 +7,17 @@ import Box from '@material-ui/core/Box';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Link from 'next/link';
 import Route from 'next/router';
+import { useProfile } from '../login/profile';
 
 const InputWords = () => {
-    const [article, setArticle] = useState({ book: '', title: '', text: '' });
+    const [userId] = useProfile();
+
+    // self-logic
+    const [article, setArticle] = useState({
+        book: '',
+        title: '',
+        text: '',
+    });
     const { book, title, text } = article;
 
     const changeHandler = useCallback(e => {
@@ -20,7 +28,7 @@ const InputWords = () => {
         e.preventDefault();
         if (book && title && text) {
             const url = '/api/note';
-            const fromUserId = undefined;
+            const fromUserId = userId;
             const res = await fetchAsync(url, {
                 method: 'POST',
                 body: { fromUserId, book, title, text },
@@ -47,7 +55,8 @@ const InputWords = () => {
                 variant='outlined'
                 margin='normal'
             />
-            <Box py={1} pr={1}>
+
+            <Box p={2}>
                 <TextareaAutosize
                     name='text'
                     style={{ width: '100%' }}
@@ -56,6 +65,7 @@ const InputWords = () => {
                     value={text}
                 />
             </Box>
+
             <Box py={1} display='flex' justifyContent='flex-end'>
                 <Box mx={2}>
                     <Button color='primary' onClick={() => Route.back()}>

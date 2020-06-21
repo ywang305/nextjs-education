@@ -12,6 +12,7 @@ export const commentSchema = new Schema(
 
 export const paragraphSchema = new Schema({
     text: String,
+    trans: String,
     comments: [commentSchema],
     images: [String], //urls
 });
@@ -37,13 +38,14 @@ export default async (req, res) => {
                     .sort('-updated')
                     .exec();
             case 'POST':
-                const { book, title, fromUserId, text } = body;
-                const paragraphs = (
-                    text?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|').split('|') ??
-                    []
-                ).map(text => {
-                    return { text };
-                });
+                const { book, title, fromUserId, text, transText } = body;
+
+                const paragraphs = text
+                    ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+                    .split('|')
+                    ?.map(text => {
+                        return { text };
+                    });
                 return Note.create({
                     paragraphs,
                     title,
