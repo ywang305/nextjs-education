@@ -8,7 +8,7 @@ import NoteAddIcon from '@material-ui/icons/NoteAddOutlined';
 import { useTheme } from '@material-ui/core/styles';
 import { green } from '@material-ui/core/colors';
 import { useSelector } from 'react-redux';
-import { useProfile } from '../login/Profile';
+import { useProfile } from '../login/profile';
 
 const NotePage = () => {
     const theme = useTheme();
