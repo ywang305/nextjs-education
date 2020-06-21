@@ -4,7 +4,6 @@ import Box from '@material-ui/core/Box';
 
 import { useTheme } from '@material-ui/core/styles';
 import { TextField, Button, Snackbar } from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert';
 import { loginThunk } from '../../lib/store/login/action';
 import { useDispatch } from 'react-redux';
 import Router from 'next/router';

@@ -41,7 +41,10 @@ export function ButtonAppBar() {
                 {links.map(l => {
                     if (l === 'login' && userId) {
                         return (
-                            <Link href={'/profile'} key={l + '_profile'}>
+                            <Link
+                                href={'/' + l + '/profile'}
+                                key={l + '_profile'}
+                            >
                                 <IconButton color='inherit'>
                                     <AccountCircleIcon />
                                 </IconButton>

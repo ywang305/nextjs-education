@@ -41,7 +41,7 @@ const useSignup = () => {
     return [credential, changeHandler, clickToLogin, msg, setMsg];
 };
 
-const LoginPage = () => {
+const SignupPage = () => {
     const theme = useTheme();
 
     const [credential, changeHandler, clickToLogin, msg, setMsg] = useSignup();
@@ -92,4 +92,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignupPage;
