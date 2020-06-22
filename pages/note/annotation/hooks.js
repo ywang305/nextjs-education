@@ -3,7 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import useSpeechSynthesis from '../../../lib/html5/useSpeechSynthesis';
 import fetchAsync from '../../../lib/fetchAsync';
-import { postCommentsThunk } from '../../../lib/store/note/action';
+import {
+    postCommentsThunk,
+    deleteCommentThunk,
+} from '../../../lib/store/note/action';
 
 export const usePopover = () => {
     // const [anchorEl, setAnchorEl] = React.useState(null);
@@ -74,12 +77,20 @@ export const useQueryDict = selectedWord => {
     return [dict];
 };
 
-export const useAddComment = () => {
+export const useComment = () => {
     const dispatch = useDispatch();
     const addCommentsHandler = (note_id, parag_id, comments) => async () => {
         await dispatch(postCommentsThunk(note_id, parag_id, comments));
     };
-    return [addCommentsHandler];
+
+    const deleteCommentHandler = (
+        note_id,
+        parag_id,
+        comment_id
+    ) => async () => {
+        await dispatch(deleteCommentThunk(note_id, parag_id, comment_id));
+    };
+    return [addCommentsHandler, deleteCommentHandler];
 };
 
 export default () => {};

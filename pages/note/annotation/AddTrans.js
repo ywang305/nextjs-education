@@ -6,61 +6,69 @@ import {
     Divider,
     Button,
     TextField,
+    Fab,
 } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
 import fetchAsync from '../../../lib/fetchAsync';
 import { useRouter } from 'next/router';
-import { postCommentsThunk } from '../../../lib/store/note/action';
+import { postTransThunk } from '../../../lib/store/note/action';
 import { useDispatch } from 'react-redux';
 import { useProfile } from '../../login/profile';
 
-export const useComment = parag_id => {
+export const useTrans = parag_id => {
     const dispatch = useDispatch();
     const {
         query: { note_id },
     } = useRouter();
 
-    const [editAnno, setEditAnno] = useState({ open: false, text: '' });
-    const clickOpen = () => {
-        setEditAnno({ open: true, text: '' });
+    const [translate, setTranslate] = useState({ open: false, text: '' });
+
+    const changeHandler = e => {
+        setTranslate(t => ({ ...t, text: e.target?.value }));
     };
-    const changeText = e =>
-        setEditAnno(a => ({
-            ...a,
-            text: e.target?.value,
-        }));
 
     const clickCancel = () => {
-        setEditAnno({
+        setTranslate({
             open: false,
             text: '',
         });
     };
 
-    const clickConfirmToSubmit = async () => {
-        const newComments = editAnno.text?.split('\n').map(c => ({
-            text: c,
-            fromUserId: undefined,
-        }));
-        dispatch(postCommentsThunk(note_id, parag_id, newComments));
-
+    const clickSubmit = async () => {
+        const { text } = translate;
+        if (text) {
+            await dispatch(postTransThunk(note_id, parag_id, text));
+        }
         clickCancel();
     };
 
+    const clickOpen = () => {
+        setTranslate(t => ({ ...t, open: true }));
+    };
+
     return [
-        clickConfirmToSubmit,
-        editAnno.open,
-        editAnno.text,
-        clickOpen,
-        changeText,
+        translate.open,
+        translate.text,
+        changeHandler,
         clickCancel,
+        clickSubmit,
+        clickOpen,
     ];
 };
 
 const AddTrans = ({ paragraph }) => {
-    const { _id, trans } = paragraph;
     const [_, isSuperUser] = useProfile();
 
-    if (isSuperUser) {
+    const [
+        open,
+        text,
+        changeHandler,
+        clickCancel,
+        clickSubmit,
+        clickOpen,
+    ] = useTrans(paragraph?._id);
+
+    if (isSuperUser && open) {
         return (
             <Box>
                 <TextField
@@ -68,14 +76,15 @@ const AddTrans = ({ paragraph }) => {
                     variant='outlined'
                     fullWidth
                     label='输入翻译'
-                    value={trans}
-                    // onChange={changeText}
+                    placeholder={paragraph?.trans}
+                    value={text}
+                    onChange={changeHandler}
                 />
 
                 <Box display='flex' justifyContent='flex-end'>
                     <Box pr={4}>
                         <Button
-                            // onClick={clickConfirmToSubmit}
+                            onClick={clickSubmit}
                             variant='contained'
                             color='primary'
                         >
@@ -83,10 +92,7 @@ const AddTrans = ({ paragraph }) => {
                         </Button>
                     </Box>
                     <Box>
-                        <Button
-                            // onClick={clickCancel}
-                            variant='outlined'
-                        >
+                        <Button onClick={clickCancel} variant='outlined'>
                             取消
                         </Button>
                     </Box>
@@ -97,6 +103,23 @@ const AddTrans = ({ paragraph }) => {
     return (
         <Typography paragraph color='textSecondary'>
             {paragraph?.trans}
+            {isSuperUser &&
+                (paragraph?.trans ? (
+                    <Box component='span' pl={2}>
+                        <IconButton color='secondary' onClick={clickOpen}>
+                            <EditIcon />
+                        </IconButton>
+                    </Box>
+                ) : (
+                    <Fab
+                        variant='extended'
+                        color='secondary'
+                        onClick={clickOpen}
+                    >
+                        <EditIcon />
+                        添加此句翻译
+                    </Fab>
+                ))}
         </Typography>
     );
 };

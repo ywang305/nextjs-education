@@ -11,6 +11,7 @@ import fetchAsync from '../../../lib/fetchAsync';
 import { useRouter } from 'next/router';
 import { postCommentsThunk } from '../../../lib/store/note/action';
 import { useDispatch } from 'react-redux';
+import { useProfile } from '../../login/profile';
 
 export const useComment = parag_id => {
     const dispatch = useDispatch();
@@ -35,10 +36,12 @@ export const useComment = parag_id => {
         });
     };
 
+    const [userId] = useProfile();
+
     const clickConfirmToSubmit = async () => {
         const newComments = editAnno.text?.split('\n').map(c => ({
             text: c,
-            fromUserId: undefined,
+            fromUserId: userId,
         }));
         dispatch(postCommentsThunk(note_id, parag_id, newComments));
 

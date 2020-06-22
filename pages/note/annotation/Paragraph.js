@@ -9,6 +9,7 @@ import {
     TextField,
     Collapse,
     ListItemAvatar,
+    ListItemSecondaryAction,
 } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -26,18 +27,20 @@ import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import StopIcon from '@material-ui/icons/Stop';
 import Avatar from '@material-ui/core/Avatar';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import DeleteIcon from '@material-ui/icons/DeleteForever';
 
 import {
     usePopover,
     usePlaySpeech,
     useLoopSpeech,
     useQueryDict,
-    useAddComment,
+    useComment,
 } from './hooks';
 import AddAnno from './AddAnno';
 import { useNote, useSetting } from '../[note_id]';
 import AddImage from './AddImage';
 import AddTrans from './AddTrans';
+import { useProfile } from '../../login/profile';
 
 const Paragraph = ({ paragraph, focused = false }) => {
     const [
@@ -60,7 +63,8 @@ const Paragraph = ({ paragraph, focused = false }) => {
         p => p._id === paragraph._id
     );
 
-    const [addCommentHandler] = useAddComment();
+    const [addCommentHandler, deleteCommentHandler] = useComment();
+    const [userId, isSuperId] = useProfile();
 
     return (
         <div
@@ -124,7 +128,12 @@ const Paragraph = ({ paragraph, focused = false }) => {
                             }
                         >
                             {paragraph?.comments?.map((commObj, j) => {
-                                const { text, fromUserId, updatedAt } = commObj;
+                                const {
+                                    _id,
+                                    text,
+                                    fromUserId,
+                                    updatedAt,
+                                } = commObj;
                                 return (
                                     <ListItem key={j}>
                                         <ListItemAvatar>
@@ -134,10 +143,29 @@ const Paragraph = ({ paragraph, focused = false }) => {
                                         </ListItemAvatar>
                                         <ListItemText
                                             primary={text}
-                                            secondary={`${fromUserId}   ${new Date(
+                                            secondary={`${fromUserId} - ${new Date(
                                                 updatedAt
                                             ).toLocaleString()}`}
                                         />
+                                        {(isSuperId ||
+                                            fromUserId === userId) && (
+                                            <ListItemSecondaryAction>
+                                                <Tooltip title='删除这条笔记'>
+                                                    <IconButton
+                                                        color='secondary'
+                                                        edge='end'
+                                                        aria-label='delete'
+                                                        onClick={deleteCommentHandler(
+                                                            note?._id,
+                                                            paragraph?._id,
+                                                            _id
+                                                        )}
+                                                    >
+                                                        <DeleteIcon />
+                                                    </IconButton>
+                                                </Tooltip>
+                                            </ListItemSecondaryAction>
+                                        )}
                                     </ListItem>
                                 );
                             })}
