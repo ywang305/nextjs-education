@@ -13,11 +13,6 @@ import { useProfile } from '../login/profile';
 const InputWords = () => {
     // user role for authroziation
     const [userId] = useProfile();
-    // auto-paragraph
-    const [autoParag, setAutoParag] = useState(true);
-    const clickSwitchHandler = e => {
-        setAutoParag(e.target?.checked);
-    };
 
     // main-logic
     const [article, setArticle] = useState({
@@ -38,7 +33,7 @@ const InputWords = () => {
             const fromUserId = userId;
             const res = await fetchAsync(url, {
                 method: 'POST',
-                body: { fromUserId, book, title, text, autoParag },
+                body: { fromUserId, book, title, text },
             });
             Route.back();
         }
@@ -74,26 +69,30 @@ const InputWords = () => {
             </Box>
 
             <Box py={1} display='flex' justifyContent='flex-end'>
-                <FormControlLabel
-                    control={
-                        <Switch
-                            checked={autoParag}
-                            onChange={clickSwitchHandler}
-                            name='autoParag'
-                            color='primary'
-                        />
-                    }
-                    label='自动分段'
-                />
+                <Box mx={2}>
+                    <Button
+                        color='primary'
+                        onClick={() => {
+                            const paragText = text
+                                ?.replace(/([.?!\n])\s*(?=[A-Z])/g, '$1|')
+                                .split('|')
+                                .map(t => '  ' + t.trim())
+                                .join('\n\n');
+                            setArticle(s => ({ ...s, text: paragText }));
+                        }}
+                    >
+                        自动分段
+                    </Button>
+                </Box>
 
                 <Box mx={2}>
                     <Button color='primary' onClick={() => Route.back()}>
-                        Cancel
+                        取消
                     </Button>
                 </Box>
 
                 <Button type='submit' variant='contained' color='primary'>
-                    Submit Article
+                    提交
                 </Button>
             </Box>
         </form>

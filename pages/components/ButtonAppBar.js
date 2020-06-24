@@ -53,8 +53,8 @@ export function ButtonAppBar() {
                     }
 
                     return (
-                        <Box pl={1}>
-                            <Link href={'/' + l} key={l}>
+                        <Box pl={1} key={l}>
+                            <Link href={'/' + l}>
                                 <Button color='inherit'>{l}</Button>
                             </Link>
                         </Box>
