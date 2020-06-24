@@ -38,14 +38,21 @@ export default async (req, res) => {
                     .sort('-updated')
                     .exec();
             case 'POST':
-                const { book, title, fromUserId, text, transText } = body;
+                const { book, title, fromUserId, text, autoParag } = body;
 
-                const paragraphs = text
-                    ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
-                    .split('|')
-                    ?.map(text => {
-                        return { text };
-                    });
+                const paragraphs = autoParag
+                    ? text
+                          ?.replace(/([.?!])\s*(?=[A-Z])/g, '$1|')
+                          .split('|')
+                          ?.map(text => {
+                              return { text };
+                          })
+                    : text
+                          .split(/\r?\n/g)
+                          .filter(t => Boolean(t))
+                          .map(text => {
+                              return { text: text.trim() };
+                          });
                 return Note.create({
                     paragraphs,
                     title,

@@ -5,14 +5,21 @@ import fetchAsync from '../../lib/fetchAsync';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import Link from 'next/link';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Route from 'next/router';
 import { useProfile } from '../login/profile';
 
 const InputWords = () => {
+    // user role for authroziation
     const [userId] = useProfile();
+    // auto-paragraph
+    const [autoParag, setAutoParag] = useState(true);
+    const clickSwitchHandler = e => {
+        setAutoParag(e.target?.checked);
+    };
 
-    // self-logic
+    // main-logic
     const [article, setArticle] = useState({
         book: '',
         title: '',
@@ -31,7 +38,7 @@ const InputWords = () => {
             const fromUserId = userId;
             const res = await fetchAsync(url, {
                 method: 'POST',
-                body: { fromUserId, book, title, text },
+                body: { fromUserId, book, title, text, autoParag },
             });
             Route.back();
         }
@@ -67,6 +74,18 @@ const InputWords = () => {
             </Box>
 
             <Box py={1} display='flex' justifyContent='flex-end'>
+                <FormControlLabel
+                    control={
+                        <Switch
+                            checked={autoParag}
+                            onChange={clickSwitchHandler}
+                            name='autoParag'
+                            color='primary'
+                        />
+                    }
+                    label='自动分段'
+                />
+
                 <Box mx={2}>
                     <Button color='primary' onClick={() => Route.back()}>
                         Cancel
