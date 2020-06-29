@@ -12,7 +12,10 @@ import { useSelector } from 'react-redux';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Divider, useTheme } from '@material-ui/core';
 
-const links = ['note', 'spell', 'login'];
+const links = [
+    { name: 'e-learn', link: '/e-learn-facade' },
+    { name: 'login', link: '/login' },
+];
 
 const useUserId = () => {
     const userId = useSelector(state => state.login.userId);
@@ -38,12 +41,12 @@ export function ButtonAppBar() {
                     </Typography>
                 </Link>
                 <Box style={{ flexGrow: 1 }} />
-                {links.map(l => {
-                    if (l === 'login' && userId) {
+                {links.map(({ name, link }) => {
+                    if (name === 'login' && userId) {
                         return (
                             <Link
-                                href={'/' + l + '/profile'}
-                                key={l + '_profile'}
+                                href={link + '/profile'}
+                                key={name + '_profile'}
                             >
                                 <IconButton color='inherit'>
                                     <AccountCircleIcon />
@@ -53,9 +56,9 @@ export function ButtonAppBar() {
                     }
 
                     return (
-                        <Box pl={1} key={l}>
-                            <Link href={'/' + l}>
-                                <Button color='inherit'>{l}</Button>
+                        <Box pl={1} key={name}>
+                            <Link href={link}>
+                                <Button color='inherit'>{name}</Button>
                             </Link>
                         </Box>
                     );
