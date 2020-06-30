@@ -13,6 +13,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Divider, useTheme } from '@material-ui/core';
 
 const links = [
+    { name: 'Web-RTC', link: '/webrtc' },
     { name: 'e-learn', link: '/e-learn-facade' },
     { name: 'login', link: '/login' },
 ];
