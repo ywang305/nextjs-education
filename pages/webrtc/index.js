@@ -12,16 +12,17 @@ import Button from '@material-ui/core/Button';
 import firebase from '../../lib/firebase';
 import 'firebase/firestore';
 
-export function useStream(constraint = { video: true, audio: true }) {
+export function useStream(video = true, audio = true) {
     const [localStream, setLocalStream] = useState(null);
     const [remoteStream, setRemoteStream] = useState(new MediaStream());
 
     useEffect(() => {
         async function enableStream() {
             try {
-                const stream = await navigator.mediaDevices.getUserMedia(
-                    constraint
-                );
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video,
+                    audio,
+                });
                 setLocalStream(stream);
             } catch (err) {
                 // Removed for brevity
@@ -29,7 +30,7 @@ export function useStream(constraint = { video: true, audio: true }) {
         }
         enableStream();
         return () => localStream?.getTracks().forEach(track => track.stop());
-    }, [constraint]);
+    }, [video, audio]);
 
     return [localStream, remoteStream];
 }
@@ -57,7 +58,7 @@ export function usePeerConnection() {
         localStream?.getTracks().forEach(track => {
             peerConnection.addTrack(track, localStream);
         });
-    }, [localStream]);
+    }, [localStream, peerConnection]);
 
     const [roomId, setRoomId] = useState('');
 
