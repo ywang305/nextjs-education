@@ -34,20 +34,22 @@ const JoinMeeting = () => {
   };
 
   return (
-    <Box component='form' onSubmit={submitHandler}>
-      <TextField
-        label='Input caller ID'
-        value={callerId}
-        onChange={(e) => {
-          setCallerId(e.target.value);
-          if (errMsg) setErrMsg('');
-        }}
-        error={Boolean(errMsg)}
-        helperText={errMsg}
-      />
-      <Button type='submit' variant='contained' color='primary'>
-        Join Meeting
-      </Button>
+    <Box onSubmit={submitHandler} pt={16}>
+      <form onSubmit={submitHandler}>
+        <TextField
+          label='Input caller ID'
+          value={callerId}
+          onChange={(e) => {
+            setCallerId(e.target.value);
+            if (errMsg) setErrMsg('');
+          }}
+          error={Boolean(errMsg)}
+          helperText={errMsg}
+        />
+        <Button type='submit' variant='outlined' color='primary'>
+          Join Meeting
+        </Button>
+      </form>
     </Box>
   );
 };
