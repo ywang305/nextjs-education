@@ -8,6 +8,7 @@ import React, {
 import useVideo from 'react-use/lib/useVideo';
 import Link from 'next/link';
 import Route, { useRouter } from 'next/router';
+import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import firebase from '../../../lib/firebase';
@@ -174,44 +175,60 @@ const useCreateRTC = () => {
     }
   }, [callerId, peerConnection]);
 
-  return [callerId, clickHangUp];
+  const isCaller = useMemo(() => true, []);
+
+  return [callerId, clickHangUp, isCaller];
 };
 
 export default function Video({ useRTC = useCreateRTC }) {
-  const [callerId, clickHangUp] = useRTC();
+  const [callerId, clickHangUp, isCaller] = useRTC();
+
+  const { spacing } = useTheme();
 
   return (
     <div>
-      <Box position='relative' border={1} borderColor='error.main' p={2}>
-        <video id='localVideo' playsInline autoPlay width='320' height='240' />
+      <Box display='flex' justifyContent='center'>
+        <Box position='relative'>
+          <video
+            id='localVideo'
+            playsInline
+            autoPlay
+            style={{ maxHeight: '75vh', width: '100%' }}
+          />
 
-        <video
-          id='remoteVideo'
-          playsInline
-          autoPlay
-          width='20%'
-          height='20%'
-          style={{ position: 'absolute', top: '4px', right: '4px' }}
-        />
+          <video
+            id='remoteVideo'
+            playsInline
+            autoPlay
+            style={{
+              position: 'absolute',
+              top: spacing(1),
+              right: spacing(1),
+              zIndex: 10,
+              height: '20%',
+              borderRadius: spacing(1),
+            }}
+          />
+          <Box position='absolute' bottom={spacing(2)} left='50%' ml='-72px'>
+            <Fab variant='extended' color='secondary' onClick={clickHangUp}>
+              <CallEndIcon />
+              <Box pl={1}>Hang Up</Box>
+            </Fab>
+          </Box>
+        </Box>
       </Box>
-
-      <Fab variant='extended' color='secondary' onClick={clickHangUp}>
-        <CallEndIcon />
-        <Box pl={1}>Hang Up</Box>
-      </Fab>
-
-      <Typography>
-        <Box mr={1} component='span' color='info.main'>
-          {callerId}
-        </Box>
-        is your caller ID.
-        <br />
-        shared this link:
-        <Box mx={1} component='span' color='info.main'>
-          {location.href.replace(/caller/, 'callee')}
-        </Box>
-        to the other user
-      </Typography>
+      {Boolean(isCaller) && (
+        <ul>
+          <li>
+            shared your caller ID <a href='#'>{callerId}</a>
+          </li>
+          <li>
+            or shared this link: &nbsp;
+            <a href='#'>{location.href.replace(/caller/, 'callee')}</a>
+            &nbsp;to callee
+          </li>
+        </ul>
+      )}
     </div>
   );
 }
