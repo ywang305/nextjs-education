@@ -5,9 +5,6 @@ import React, {
   useRef,
   useMemo,
 } from 'react';
-import { useSelector } from 'react-redux';
-import { hri } from 'human-readable-ids';
-import Link from 'next/link';
 import Route, { useRouter } from 'next/router';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
@@ -34,8 +31,16 @@ const JoinMeeting = () => {
   };
 
   return (
-    <Box onSubmit={submitHandler} pt={16}>
-      <form onSubmit={submitHandler}>
+    <Box
+      component='form'
+      onSubmit={submitHandler}
+      pt={16}
+      display='flex'
+      flexWrap='wrap'
+      alignItems='center'
+      justifyContent='center'
+    >
+      <Box m={1}>
         <TextField
           label='Input caller ID'
           value={callerId}
@@ -46,10 +51,12 @@ const JoinMeeting = () => {
           error={Boolean(errMsg)}
           helperText={errMsg}
         />
+      </Box>
+      <Box m={1}>
         <Button type='submit' variant='outlined' color='primary'>
           Join Meeting
         </Button>
-      </form>
+      </Box>
     </Box>
   );
 };
