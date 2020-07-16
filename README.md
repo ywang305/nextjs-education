@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-demo: [https://nextjs-education.now.sh](https://nextjs-education.now.sh)
+live demo: [https://nextjs-education.now.sh](https://nextjs-education.now.sh)
 
 First, run the development server:
 
@@ -36,3 +36,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ```Javascript
 `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-1iam7.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
 ```
+
+## Azure Function, SignalR
