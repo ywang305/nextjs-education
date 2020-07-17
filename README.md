@@ -5,7 +5,7 @@ This is a tech-probe project, targeting at full-stack development
 * live demo: [https://nextjs-education.now.sh](https://nextjs-education.now.sh)
 
 * probes
-  ![architecture](https://user-images.githubusercontent.com/24782000/87746532-cf120600-c7be-11ea-923f-683a2064d182.png)
+  ![techs](https://user-images.githubusercontent.com/24782000/87746996-0503ba00-c7c0-11ea-8707-391d00094bdd.png)
 
 ## Getting Started
 First, run the development server:
