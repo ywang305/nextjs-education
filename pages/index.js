@@ -13,7 +13,7 @@ const images = [
   '/landing/nextmongo.png',
   '/landing/firebase.png',
   '/landing/azure.png',
-  '/landing/cloud.jpg',
+  '/landing/reactjs-azure-signalr.jpg',
   '/landing/swiftui.jpg',
   '/landing/deno.jpg',
 ];
