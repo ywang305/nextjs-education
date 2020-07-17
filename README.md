@@ -52,4 +52,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - add broadcast code
   - ![function code: message binding to SignalR output](https://user-images.githubusercontent.com/24782000/87733255-4b93ed00-c79d-11ea-8fa3-065243056bc3.png)
   - ![function message , add signalr output](https://user-images.githubusercontent.com/24782000/87734214-fc9b8700-c79f-11ea-858d-54014287c8ad.png)
-![add cors for function](https://user-images.githubusercontent.com/24782000/87734386-7e8bb000-c7a0-11ea-9cc7-92bf71c845c0.png)
+* Allow Azure Function to CORS from Vercel
+  - ![add cors for function](https://user-images.githubusercontent.com/24782000/87734386-7e8bb000-c7a0-11ea-9cc7-92bf71c845c0.png)
