@@ -1,9 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+## About
+This is a tech-probe project, targeting at full-stack development
+
+* live demo: [https://nextjs-education.now.sh](https://nextjs-education.now.sh)
+![architecture](https://user-images.githubusercontent.com/24782000/87746532-cf120600-c7be-11ea-923f-683a2064d182.png)
 
 ## Getting Started
-
-live demo: [https://nextjs-education.now.sh](https://nextjs-education.now.sh)
-
 First, run the development server:
 
 ```bash
