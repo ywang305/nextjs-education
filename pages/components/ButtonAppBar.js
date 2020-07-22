@@ -13,6 +13,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
 
 import {
   Divider,
@@ -34,6 +35,12 @@ const useUserId = () => {
 const Links = ({ iScope = 'web' }) => {
   const links = useMemo(
     () => [
+      {
+        name: 'Svelte-Media',
+        link: 'https://svelte-media.vercel.app',
+        Icon: LiveTvIcon,
+        scope: 'mobile',
+      },
       {
         name: 'Web-RTC',
         link: '/webrtc',
@@ -66,23 +73,39 @@ const Links = ({ iScope = 'web' }) => {
             link += '/profile';
             Icon = AccountCircleIcon;
           }
+          const MobileListItem = () => (
+            <ListItem button>
+              <ListItemIcon>
+                <Icon color='primary' />
+              </ListItemIcon>
+              <ListItemText primary={name} />
+            </ListItem>
+          );
+          const WebListItem = () => <Button color='inherit'>{name}</Button>;
           return iScope === 'web' ? (
             <Box pl={1} key={name}>
-              <Link href={link}>
-                <Button color='inherit'>{name}</Button>
-              </Link>
+              {/^https:/.test(link) ? (
+                <a href={link} style={{ textDecoration: 'none' }}>
+                  <WebListItem />
+                </a>
+              ) : (
+                <Link href={link}>
+                  <WebListItem />
+                </Link>
+              )}
             </Box>
           ) : (
-            <Box minWidth={240}>
-              <Link href={link}>
-                <ListItem button key={name}>
-                  <ListItemIcon>
-                    <Icon color='primary' />
-                  </ListItemIcon>
+            <Box minWidth={240} key={name}>
+              {/^https:/.test(link) ? (
+                <a href={link} style={{ textDecoration: 'none' }}>
+                  <MobileListItem />
+                </a>
+              ) : (
+                <Link href={link}>
+                  <MobileListItem />
+                </Link>
+              )}
 
-                  <ListItemText primary={name} />
-                </ListItem>
-              </Link>
               <Divider />
             </Box>
           );
@@ -116,7 +139,9 @@ export function ButtonAppBar() {
   const [isCompact] = useWinLayout();
   const [open, toggleDrawer] = useDrawer();
 
-  const brand = /manfen/gi.test(location.hostname) ? 'Manfen-Tech' : 'JuJu Edu';
+  const brand = /manfen/gi.test(location.hostname)
+    ? 'Manfen-Tech'
+    : "Yao's Tech Probe";
 
   return (
     <>
