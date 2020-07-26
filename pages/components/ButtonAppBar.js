@@ -13,7 +13,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import LiveTvIcon from '@material-ui/icons/LiveTv';
+import ExploreIcon from '@material-ui/icons/Explore';
 
 import {
   Divider,
@@ -38,7 +38,7 @@ const Links = ({ iScope = 'web' }) => {
       {
         name: 'Svelte-Media',
         link: 'https://svelte-media.vercel.app',
-        Icon: LiveTvIcon,
+        Icon: ExploreIcon,
         scope: 'mobile',
       },
       {
