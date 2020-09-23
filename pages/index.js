@@ -4,65 +4,58 @@ import ButtonAppBar from './components/ButtonAppBar';
 import { useProfile } from './login/profile';
 import { Typography, Box, useTheme, Divider } from '@material-ui/core';
 import { useSelector } from 'react-redux';
+import { links } from './components/ButtonAppBar';
+import Footer from './components/Footer';
 
 const images = [
-  'landing/consult.jpg',
-  '/landing/webrtc.png',
-  '/landing/elearn.jpg',
-  '/landing/react.png',
-  '/landing/nextmongo.png',
-  '/landing/firebase.png',
-  '/landing/azure.png',
-  '/landing/reactjs-azure-signalr.jpg',
-  '/landing/swiftui.jpg',
-  '/landing/deno.jpg',
+	'landing/consult.jpg',
+	'/landing/webrtc.png',
+	'/landing/elearn.jpg',
+	'/landing/react.png',
+	'/landing/nextmongo.png',
+	'/landing/firebase.png',
+	'/landing/azure.png',
+	'/landing/reactjs-azure-signalr.jpg',
+	'/landing/swiftui.jpg',
+	'/landing/deno.jpg',
 ];
 
 const Landing = () => {
-  const isCompact = useSelector((state) => state.device.window.isCompact);
-  return (
-    <div>
-      <Box
-        display='flex'
-        justifyContent='center'
-        id='imgaes'
-        flexWrap='wrap'
-        py={1}
-      >
-        {images.map((url, i) => {
-          return (
-            <Box key={i} width={isCompact ? 1 : 0.5}>
-              <img src={url} alt={url} width='100%' height='100%' />
-            </Box>
-          );
-        })}
-      </Box>
-      <Box bgcolor='text.primary' color='background.paper' p={4} boxShadow={2}>
-        <Typography variant='subtitle1' gutterBottom>
-          {`Manfen Tech @${new Date().getFullYear()}`}
-        </Typography>
-        <br />
-        <Typography variant='subtitle1'>Solution</Typography>
-        <Typography variant='caption'>
-          WebRTC protocol/realtime video streaming
-          <br />
-          Interactive E-Learning
-          <br />
-          React/Node/Cloud Integration
-        </Typography>
-        <br />
-        <br />
-        <Typography variant='subtitle1'>INC.</Typography>
-        <Typography variant='caption'>
-          About
-          <br />
-          Partners
-          <br />
-          Careers
-        </Typography>
-      </Box>
-    </div>
-  );
+	const isCompact = useSelector((state) => state.device.window.isCompact);
+
+	const isManfen = /manfen/gi.test(location.hostname);
+
+	return (
+		<div>
+			<Box
+				display='flex'
+				justifyContent='space-around'
+				id='imgaes'
+				flexWrap='wrap'
+				py={1}
+			>
+				{isManfen
+					? images.map((url, i) => {
+							return (
+								<Box key={i} width={isCompact ? 1 : 0.5}>
+									<img src={url} alt={url} width='100%' />
+								</Box>
+							);
+					  })
+					: links
+							.filter((lk) => /external/i.test(lk.scope))
+							.map(({ name, link, image }) => (
+								<Box key={name} maxWidth={isCompact ? 1 : 0.45} p={2}>
+									<a href={link} style={{ textDecoration: 'none' }}>
+										<h3>{name}</h3>
+										<img src={image} alt={image} width='100%' />
+									</a>
+								</Box>
+							))}
+			</Box>
+			<Footer />
+		</div>
+	);
 };
 
 export default Landing;
