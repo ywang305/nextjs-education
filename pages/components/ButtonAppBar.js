@@ -41,6 +41,8 @@ export const links = [
         Icon: LocalTaxiIcon,
         scope: 'mobile,external',
         image: '/landing/next-car-service.png',
+        description:
+            'Cyberpunk Cars Service, for next generation vehicles that featured by unmanned, smart, luxury, racing Cyber-Car Systems.  Prototype project, probing 3rd web service including Mapbox GL, Geocoding, Firebase Auth, Stripe Payment.',
     },
     {
         name: 'Gatsby-BookExcerpt',
@@ -48,6 +50,8 @@ export const links = [
         Icon: AccountBalanceIcon,
         scope: 'mobile,external',
         image: '/landing/gatsbyBE.PNG',
+        description:
+            "Gatsby framework + Sanity.io CMS, keeping personal readding books's excerpts",
     },
     {
         name: 'Svelte-Media',
@@ -55,6 +59,8 @@ export const links = [
         Icon: ExploreIcon,
         scope: 'mobile,external',
         image: '/landing/svelteMD.PNG',
+        description:
+            'This is a light web app that display latest twitters based on a map location, powered by Svelte template,',
     },
     {
         name: 'Web-RTC',
