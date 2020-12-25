@@ -51,7 +51,7 @@ export const links = [
         scope: 'mobile,external',
         image: '/landing/gatsbyBE.PNG',
         description:
-            "Gatsby framework + Sanity.io CMS, keeping personal readding books's excerpts",
+            "Gatsby framework + Sanity.io CMS, keeping personal readding books' excerpts",
     },
     {
         name: 'Svelte-Media',
@@ -60,7 +60,7 @@ export const links = [
         scope: 'mobile,external',
         image: '/landing/svelteMD.PNG',
         description:
-            'This is a light web app that display latest twitters based on a map location, powered by Svelte template,',
+            'This is a light web app that display latest twitters based on a map location, powered by Svelte template',
     },
     {
         name: 'Web-RTC',
