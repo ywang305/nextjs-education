@@ -16,6 +16,7 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ExploreIcon from '@material-ui/icons/Explore';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import LocalTaxiIcon from '@material-ui/icons/LocalTaxi';
+import BlogIcon from '@material-ui/icons/ViewList';
 
 import {
     Divider,
@@ -72,6 +73,12 @@ export const links = [
         name: 'E-Learn',
         link: '/e-learn-facade',
         Icon: MenuBookIcon,
+        scope: 'web,mobile',
+    },
+    {
+        name: 'Blog',
+        link: '/blog',
+        Icon: BlogIcon,
         scope: 'web,mobile',
     },
     {
