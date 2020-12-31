@@ -49,6 +49,9 @@ const Landing = () => {
                                   key={name}
                                   maxWidth={isCompact ? 1 : 0.45}
                                   p={2}
+                                  my={2}
+                                  boxShadow={3}
+                                  borderRadius={16}
                               >
                                   <a
                                       href={link}
