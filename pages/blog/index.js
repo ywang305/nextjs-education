@@ -3,7 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import ListItem from '@material-ui/core/ListItem';
 import axios from 'axios';
 
-const uri = 'https://raw.githubusercontent.com/ywang305/blog/main/blogs.md';
+const uri =
+    'https://raw.githubusercontent.com/ywang305/nextjs-education/master/pages/blog/blogs.md';
 
 async function getBlogMd(onComplete) {
     const resp = await axios.get(uri);
