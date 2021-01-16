@@ -12,6 +12,7 @@
 - [教你如何在 Linux 上划分VLAN](https://mp.weixin.qq.com/s/BQ3hmMhBh1iqVcQgUdF2nA)
 - [常用的Git命令清单](https://mp.weixin.qq.com/s/ANVNo56c0FEDfvosmzMrqQ)
 - [github actions 入门指南及实践](https://mp.weixin.qq.com/s/5lTi1mRY46i7xtXl23xOKQ)
+- [Deploying a React app to AWS S3 with Github Actions](https://medium.com/trackstack/deploying-a-react-app-to-aws-s3-with-github-actions-b1cb9ba75c95)
 
 ## Dev
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
