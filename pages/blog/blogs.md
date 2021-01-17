@@ -14,6 +14,7 @@
 - [github actions 入门指南及实践](https://mp.weixin.qq.com/s/5lTi1mRY46i7xtXl23xOKQ)
 - [Deploying a React app to AWS S3 with Github Actions](https://medium.com/trackstack/deploying-a-react-app-to-aws-s3-with-github-actions-b1cb9ba75c95)
 - [GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- [阮一峰  SSH 教程](https://wangdoc.com/ssh/key.html)
 
 ## Dev
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
