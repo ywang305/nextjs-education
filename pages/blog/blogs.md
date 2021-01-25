@@ -15,7 +15,7 @@
 - [Deploying a React app to AWS S3 with Github Actions](https://medium.com/trackstack/deploying-a-react-app-to-aws-s3-with-github-actions-b1cb9ba75c95)
 - [GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 - [阮一峰  SSH 教程](https://wangdoc.com/ssh/key.html)
-- [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s?src=11&timestamp=1611463526&ver=2847&signature=zXUfnEgcVI2GNGNnqNrDrx8yH2UzqVo*t-XTx4d2oEWBbDGXMeHK*4Ik4jcNT2sR*Afewsytto1MKNik8m*zqKMHK7UvbPsrvJzq3jEKqs59q1qa0dmBXao9wXXMUfGQ&new=1)
+- [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s/rdmeyguJI6C8dtOGaLjELw)
 
 ## Dev
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
@@ -26,4 +26,3 @@
 
 ## vue
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
-- [为什么 Vue3 选择了 CSS 变量](https://mp.weixin.qq.com/s?src=11&timestamp=1611463440&ver=2847&signature=E9Pu8K4vnTqLukF9HyBveWTAbCp62Ms1hf*m*zDj2qZkfqmPRWNlbDElIByVb4N4oGICgYxxija5SgwG0a*f9IVRlEdxuEr1dT1bKXBymHbn5fJX9KQysZLvXefYC9gA&new=1)
