@@ -1,4 +1,8 @@
 # Blogs
+
+## Architecture
+- [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
+
 ## Node
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
