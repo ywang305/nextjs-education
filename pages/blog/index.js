@@ -19,6 +19,10 @@ export default function BlogPage() {
 
     return (
         <div>
+            <a href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
+                编辑 Markdown
+            </a>
+            <br />
             <ReactMarkdown renderers={{ link: Link }}>{md}</ReactMarkdown>
         </div>
     );
