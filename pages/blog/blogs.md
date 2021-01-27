@@ -11,7 +11,7 @@
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
 - [手把手教你10个Typescript小技巧](https://mp.weixin.qq.com/s/BXcwEaEfxG_LBr3koOSCRA)
 
-## Ops
+## DevOps
 - [多年经验，教你写出最惊艳的 Markdown 高级用法](https://mp.weixin.qq.com/s/jxCWWk1psV-MHcp_qO-HBA)
 - [Linux之iptables端口转发：外网访问内网](https://mp.weixin.qq.com/s/viwZov-hX3kuup7Htrcg0A)
 - [教你如何在 Linux 上划分VLAN](https://mp.weixin.qq.com/s/BQ3hmMhBh1iqVcQgUdF2nA)
