@@ -9,6 +9,7 @@
 - [12 个 GitHub 上超火的 JavaScript 奇技淫巧项目](https://mp.weixin.qq.com/s/yg_qHvLQTayq2lvLiCptbw)
 - [33 个提高前端工作效率的 VSCode 实用插件](https://mp.weixin.qq.com/s/8IMjdm1RfzT4DeVW1dOcOg)
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
+- [手把手教你10个Typescript小技巧](https://mp.weixin.qq.com/s/BXcwEaEfxG_LBr3koOSCRA)
 
 ## Ops
 - [多年经验，教你写出最惊艳的 Markdown 高级用法](https://mp.weixin.qq.com/s/jxCWWk1psV-MHcp_qO-HBA)
@@ -21,7 +22,7 @@
 - [阮一峰  SSH 教程](https://wangdoc.com/ssh/key.html)
 - [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s/rdmeyguJI6C8dtOGaLjELw)
 
-## Dev
+## Design
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
 - [设计灵感：12组银行金融类App界面设计](https://mp.weixin.qq.com/s/XRU1JnuhStOxMrYRqUcfhQ)
 
