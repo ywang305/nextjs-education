@@ -16,6 +16,7 @@
 
 ## DevOps
 - [多年经验，教你写出最惊艳的 Markdown 高级用法](https://mp.weixin.qq.com/s/jxCWWk1psV-MHcp_qO-HBA)
+- [面试常问的 25+ 个 Linux 命令](https://mp.weixin.qq.com/s/3Fsuv2pTaxrOPUU03Zm9ZA)
 - [Linux之iptables端口转发：外网访问内网](https://mp.weixin.qq.com/s/viwZov-hX3kuup7Htrcg0A)
 - [教你如何在 Linux 上划分VLAN](https://mp.weixin.qq.com/s/BQ3hmMhBh1iqVcQgUdF2nA)
 - [常用的Git命令清单](https://mp.weixin.qq.com/s/ANVNo56c0FEDfvosmzMrqQ)
