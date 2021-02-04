@@ -4,6 +4,7 @@
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
 - [Kafka中的消费者组（Consumer Group）](https://blog.csdn.net/gdkyxy2013/article/details/86644919)
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
+- [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 
 ## Node
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
