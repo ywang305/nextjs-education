@@ -27,6 +27,7 @@
 - [GitHub Actions 入门教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 - [阮一峰  SSH 教程](https://wangdoc.com/ssh/key.html)
 - [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s/rdmeyguJI6C8dtOGaLjELw)
+- [kafka docker localhost issue](https://rmoff.net/2018/08/02/kafka-listeners-explained)
 
 ## Design
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
