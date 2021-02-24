@@ -1,12 +1,13 @@
 # Blogs
 
+
 ## Architecture
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
 - [Kafka中的消费者组（Consumer Group）](https://blog.csdn.net/gdkyxy2013/article/details/86644919)
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
-- [Spring Asynchronous Processing](https://spring.io/guides/gs/async-method/)
 
+----------------
 ## Node
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
@@ -16,6 +17,7 @@
 - [手把手教你10个Typescript小技巧](https://mp.weixin.qq.com/s/BXcwEaEfxG_LBr3koOSCRA)
 - [Creating Simple API Gateway using Node JS](https://medium.com/hackernoon/creating-simple-api-gateway-using-node-js-6d5933c214b8)
 
+----------------
 ## DevOps
 - [多年经验，教你写出最惊艳的 Markdown 高级用法](https://mp.weixin.qq.com/s/jxCWWk1psV-MHcp_qO-HBA)
 - [面试常问的 25+ 个 Linux 命令](https://mp.weixin.qq.com/s/3Fsuv2pTaxrOPUU03Zm9ZA)
@@ -28,14 +30,21 @@
 - [阮一峰  SSH 教程](https://wangdoc.com/ssh/key.html)
 - [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s/rdmeyguJI6C8dtOGaLjELw)
 - [kafka network in DOCKER](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc)
+
+----------------
+## JAVA
+- [Spring Asynchronous Processing](https://spring.io/guides/gs/async-method/)
 - [SpringBoot+gradle项目中的两种jar包（依赖包和可运行包）](https://blog.csdn.net/weixin_39080216/article/details/105248082)
 
+----------------
 ## Design
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
 - [设计灵感：12组银行金融类App界面设计](https://mp.weixin.qq.com/s/XRU1JnuhStOxMrYRqUcfhQ)
 
+----------------
 ## Util
 - [分享和发现应用产品的网站](https://mp.weixin.qq.com/s/ykhz0cBUEsdKSnQ7zj8XUA)
 
+----------------
 ## vue
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
