@@ -49,3 +49,8 @@
 ----------------
 ## vue
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
+
+## What to read
+- aws
+  - Rapid Docker on AWS: The fastest way to start with Docker on Amazon Web Services
+  - Mastering AWS CloudFormation: Plan, develop, and deploy your cloud infrastructure effectively using AWS CloudFormation
