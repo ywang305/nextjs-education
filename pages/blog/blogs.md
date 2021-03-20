@@ -4,6 +4,7 @@
 ## Architecture
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
 - [Kafka中的消费者组（Consumer Group）](https://blog.csdn.net/gdkyxy2013/article/details/86644919)
+- [你可能用错了 kafka 的重试机制](https://mp.weixin.qq.com/s/8XkwXz7N6L_gdq6Ns4HZaQ)
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 
@@ -16,6 +17,7 @@
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
 - [手把手教你10个Typescript小技巧](https://mp.weixin.qq.com/s/BXcwEaEfxG_LBr3koOSCRA)
 - [Creating Simple API Gateway using Node JS](https://medium.com/hackernoon/creating-simple-api-gateway-using-node-js-6d5933c214b8)
+- [typescript4.2新特性](https://mp.weixin.qq.com/s/rslVTm0oUyd33sBHe_buIw)
 
 ----------------
 ## DevOps
@@ -41,6 +43,10 @@
 ## Design
 - [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
 - [设计灵感：12组银行金融类App界面设计](https://mp.weixin.qq.com/s/XRU1JnuhStOxMrYRqUcfhQ)
+
+--------------
+## DB
+- [炸裂！MySQL 82 张图带你飞](https://mp.weixin.qq.com/s/V62iwhbDVmfgiXN4_z0xsw)
 
 ----------------
 ## Util
