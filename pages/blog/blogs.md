@@ -18,6 +18,7 @@
 - [手把手教你10个Typescript小技巧](https://mp.weixin.qq.com/s/BXcwEaEfxG_LBr3koOSCRA)
 - [Creating Simple API Gateway using Node JS](https://medium.com/hackernoon/creating-simple-api-gateway-using-node-js-6d5933c214b8)
 - [typescript4.2新特性](https://mp.weixin.qq.com/s/rslVTm0oUyd33sBHe_buIw)
+- [How to format a date in JavaScript](https://flaviocopes.com/how-to-format-date-javascript)
 
 ----------------
 ## DevOps
