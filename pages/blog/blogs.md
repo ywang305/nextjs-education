@@ -49,6 +49,7 @@
 --------------
 ## DB
 - [炸裂！MySQL 82 张图带你飞](https://mp.weixin.qq.com/s/V62iwhbDVmfgiXN4_z0xsw)
+- [Spring Data MongoTemplate Example](https://www.concretepage.com/spring-5/spring-data-mongotemplate)
 
 ----------------
 ## Util
