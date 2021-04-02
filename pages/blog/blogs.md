@@ -40,6 +40,7 @@
 - [Spring Asynchronous Processing](https://spring.io/guides/gs/async-method/)
 - [SpringBoot+gradle项目中的两种jar包（依赖包和可运行包）](https://blog.csdn.net/weixin_39080216/article/details/105248082)
 - [Apache Kafka in Spring Boot Application](https://www.confluent.io/blog/apache-kafka-spring-boot-application/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.kafka_mt.mbm_rgn.namer_lng.eng_dv.all&utm_term=%2Bkafka%20%2Bspring&creative=&device=c&placement=&gclid=Cj0KCQiA4feBBhC9ARIsABp_nbXchaj3DwYuft_u742TtDVYq8lC-jtB_39dJqdF_c4yq9P4jSpr7RkaAolBEALw_wcB)
+- [JPA Pagination example](https://bezkoder.com/spring-data-sort-multiple-columns/)
 
 ----------------
 ## Design
