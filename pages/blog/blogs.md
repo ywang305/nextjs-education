@@ -42,6 +42,7 @@
 - [Apache Kafka in Spring Boot Application](https://www.confluent.io/blog/apache-kafka-spring-boot-application/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.kafka_mt.mbm_rgn.namer_lng.eng_dv.all&utm_term=%2Bkafka%20%2Bspring&creative=&device=c&placement=&gclid=Cj0KCQiA4feBBhC9ARIsABp_nbXchaj3DwYuft_u742TtDVYq8lC-jtB_39dJqdF_c4yq9P4jSpr7RkaAolBEALw_wcB)
 - [JPA Pagination example](https://bezkoder.com/spring-data-sort-multiple-columns/)
 - [shiro samples on github](https://github.com/apache/shiro/tree/master/samples)
+- [其实我不仅会 Spring Security，Shiro 也略懂一二！](https://mp.weixin.qq.com/s/KktdW8S7jxYHVgYbnIpWAA)
 
 ----------------
 ## Design
