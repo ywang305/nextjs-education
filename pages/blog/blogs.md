@@ -34,6 +34,7 @@
 - [超详细！Kubernetes 学习笔记总结](https://mp.weixin.qq.com/s/rdmeyguJI6C8dtOGaLjELw)
 - [kafka network in DOCKER](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc)
 - [Kubernetes 部署 MySQL 主从集群](https://mp.weixin.qq.com/s/r5INmBpGnGACWes4dOwotQ)
+- [Guide: spring-boot-kubernetes](https://spring.io/guides/gs/spring-boot-kubernetes/)
 
 ----------------
 ## JAVA
