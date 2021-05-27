@@ -8,6 +8,7 @@
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 
+
 ----------------
 ## Node
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
@@ -19,6 +20,9 @@
 - [Creating Simple API Gateway using Node JS](https://medium.com/hackernoon/creating-simple-api-gateway-using-node-js-6d5933c214b8)
 - [typescript4.2新特性](https://mp.weixin.qq.com/s/rslVTm0oUyd33sBHe_buIw)
 - [How to format a date in JavaScript](https://flaviocopes.com/how-to-format-date-javascript)
+- [从零开始搭建创业公司DevOps技术栈](https://mp.weixin.qq.com/s/QZMuF4ou-xVqjsTqtB0jeQ)
+- [Node 模块机制不完全指北](https://mp.weixin.qq.com/s/v-5Cg5XKisQeitJDjOR4AA)
+- [2021 年最值得关注的 8 个 Node.js 项目](https://mp.weixin.qq.com/s/H-8QZqN0d0TmpXJOf4eRtA)
 
 ----------------
 ## DevOps
@@ -35,6 +39,7 @@
 - [kafka network in DOCKER](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc)
 - [Kubernetes 部署 MySQL 主从集群](https://mp.weixin.qq.com/s/r5INmBpGnGACWes4dOwotQ)
 - [Guide: spring-boot-kubernetes](https://spring.io/guides/gs/spring-boot-kubernetes/)
+- [60道常见的 Kubernetes 面试题总结](https://mp.weixin.qq.com/s/m3iWYLTYqT6jOC8USsceTw)
 
 ----------------
 ## JAVA
@@ -44,6 +49,7 @@
 - [JPA Pagination example](https://bezkoder.com/spring-data-sort-multiple-columns/)
 - [shiro samples on github](https://github.com/apache/shiro/tree/master/samples)
 - [其实我不仅会 Spring Security，Shiro 也略懂一二！](https://mp.weixin.qq.com/s/KktdW8S7jxYHVgYbnIpWAA)
+- [各种陷进，盘点那些坑你没商量的JDK方法](https://mp.weixin.qq.com/s/GBtUR5My4zgdYZidImqs5g)
 
 ----------------
 ## Design
@@ -60,8 +66,9 @@
 - [分享和发现应用产品的网站](https://mp.weixin.qq.com/s/ykhz0cBUEsdKSnQ7zj8XUA)
 
 ----------------
-## vue
+## Front
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
+- [H5 项目如何适配暗黑模式](https://mp.weixin.qq.com/s/Iwuk2z73FB3Zj3cFZC37tA)
 
 ----------------
 ----------------
