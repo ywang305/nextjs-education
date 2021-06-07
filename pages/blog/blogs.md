@@ -69,6 +69,7 @@
 ## Front
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
 - [H5 项目如何适配暗黑模式](https://mp.weixin.qq.com/s/Iwuk2z73FB3Zj3cFZC37tA)
+- [Vue VSCode Snippets插件](https://mp.weixin.qq.com/s/zYkRMr-wQyyuQLD9GkGVIg)
 
 ----------------
 ----------------
