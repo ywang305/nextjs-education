@@ -7,12 +7,14 @@
 - [你可能用错了 kafka 的重试机制](https://mp.weixin.qq.com/s/8XkwXz7N6L_gdq6Ns4HZaQ)
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
+- [把 Redis 当作队列来用，真的合适吗？](https://mp.weixin.qq.com/s/taECl67JRFazrZm4XOFKXg)
 
 
 ----------------
 ## Node
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
+- [前端经典面试题(60道前端面试题包含JS、CSS、React、网络、浏览器、程序题等)](https://mp.weixin.qq.com/s/X84owwj4DVIUNF260S0T1w)
 - [12 个 GitHub 上超火的 JavaScript 奇技淫巧项目](https://mp.weixin.qq.com/s/yg_qHvLQTayq2lvLiCptbw)
 - [33 个提高前端工作效率的 VSCode 实用插件](https://mp.weixin.qq.com/s/8IMjdm1RfzT4DeVW1dOcOg)
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
@@ -40,6 +42,7 @@
 - [Kubernetes 部署 MySQL 主从集群](https://mp.weixin.qq.com/s/r5INmBpGnGACWes4dOwotQ)
 - [Guide: spring-boot-kubernetes](https://spring.io/guides/gs/spring-boot-kubernetes/)
 - [60道常见的 Kubernetes 面试题总结](https://mp.weixin.qq.com/s/m3iWYLTYqT6jOC8USsceTw)
+- [从零开始了解 kubernetes，还有谁不会？](https://mp.weixin.qq.com/s/yjznKiS3Rz2SOErIwQw59Q)
 
 ----------------
 ## JAVA
@@ -50,6 +53,8 @@
 - [shiro samples on github](https://github.com/apache/shiro/tree/master/samples)
 - [其实我不仅会 Spring Security，Shiro 也略懂一二！](https://mp.weixin.qq.com/s/KktdW8S7jxYHVgYbnIpWAA)
 - [各种陷进，盘点那些坑你没商量的JDK方法](https://mp.weixin.qq.com/s/GBtUR5My4zgdYZidImqs5g)
+- [定时任务的 5 种创建方式，还有谁不会！！](https://mp.weixin.qq.com/s/9GRxBCpeDss-llecrwo-lw)
+- [Spring Boot 中的线程池，这也太好用了！](https://mp.weixin.qq.com/s/G8kePbaHeQWibOfWATlcSg)
 
 ----------------
 ## Design
