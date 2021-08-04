@@ -16,6 +16,7 @@
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
 - [前端经典面试题(60道前端面试题包含JS、CSS、React、网络、浏览器、程序题等)](https://mp.weixin.qq.com/s/X84owwj4DVIUNF260S0T1w)
 - [面试前必备的 JavaScript 基础知识梳理总结](https://mp.weixin.qq.com/s/kRSXStfcKPvPt0WmH-jezQ)
+- [leetcode 最常见的150道前端面试题（简单题下)](https://mp.weixin.qq.com/s/1byx-MPeT0IfrBKwHFsZLg)
 - [12 个 GitHub 上超火的 JavaScript 奇技淫巧项目](https://mp.weixin.qq.com/s/yg_qHvLQTayq2lvLiCptbw)
 - [33 个提高前端工作效率的 VSCode 实用插件](https://mp.weixin.qq.com/s/8IMjdm1RfzT4DeVW1dOcOg)
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
