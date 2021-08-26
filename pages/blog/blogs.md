@@ -28,6 +28,8 @@
 - [从零开始搭建创业公司DevOps技术栈](https://mp.weixin.qq.com/s/QZMuF4ou-xVqjsTqtB0jeQ)
 - [Node 模块机制不完全指北](https://mp.weixin.qq.com/s/v-5Cg5XKisQeitJDjOR4AA)
 - [2021 年最值得关注的 8 个 Node.js 项目](https://mp.weixin.qq.com/s/H-8QZqN0d0TmpXJOf4eRtA)
+- [写在 2021：值得关注/学习的前端框架和工具库](https://mp.weixin.qq.com/s/N0vz6LMqb72wDtRuxLM4qQ)
+- [vue 实战中的一些小魔法](https://mp.weixin.qq.com/s/ITXwor7WKPrUMFts9YcQ-w)
 
 ----------------
 ## DevOps
