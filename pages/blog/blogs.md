@@ -83,7 +83,9 @@
 
 ----------------
 ----------------
-## want to read
+## plan to read
 - aws
   - Rapid Docker on AWS: The fastest way to start with Docker on Amazon Web Services
   - Mastering AWS CloudFormation: Plan, develop, and deploy your cloud infrastructure effectively using AWS CloudFormation
+  - [Systems Programming with Rust: A Project-Based Primer](https://www.letmeread.net/systems-programming-with-rust-a-project-based-primer/)
+  - [Hands-On Smart Contract Development with Hyperledger Fabric V2: Building Enterprise Blockchain Applications](https://www.letmeread.net/hands-on-smart-contract-development-with-hyperledger-fabric-v2-building-enterprise-blockchain-applications/)
