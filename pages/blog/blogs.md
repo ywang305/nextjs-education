@@ -8,6 +8,7 @@
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 - [把 Redis 当作队列来用，真的合适吗？](https://mp.weixin.qq.com/s/taECl67JRFazrZm4XOFKXg)
+- [面试官：给我一个避免消息重复消费的解决方案？](https://mp.weixin.qq.com/s/KRdOKLEHLEi3qjo0IxYrNw)
 
 
 ----------------
