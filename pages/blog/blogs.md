@@ -61,6 +61,7 @@
 - [各种陷进，盘点那些坑你没商量的JDK方法](https://mp.weixin.qq.com/s/GBtUR5My4zgdYZidImqs5g)
 - [定时任务的 5 种创建方式，还有谁不会！！](https://mp.weixin.qq.com/s/9GRxBCpeDss-llecrwo-lw)
 - [Spring Boot 中的线程池，这也太好用了！](https://mp.weixin.qq.com/s/G8kePbaHeQWibOfWATlcSg)
+- [Spring Bean Scope](https://www.baeldung.com/spring-bean-scopes)
 
 ----------------
 ## Design
