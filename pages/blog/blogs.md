@@ -72,6 +72,7 @@
 - [定时任务的 5 种创建方式，还有谁不会！！](https://mp.weixin.qq.com/s/9GRxBCpeDss-llecrwo-lw)
 - [Spring Boot 中的线程池，这也太好用了！](https://mp.weixin.qq.com/s/G8kePbaHeQWibOfWATlcSg)
 - [Spring Bean Scope](https://www.baeldung.com/spring-bean-scopes)
+- [为什么阿里不允许用Executors创建线程池，而是通过ThreadPoolExecutor的方式？](https://mp.weixin.qq.com/s/pySWp2HPnOSK-ErZiblCkg)
 
 ----------------
 ## Design
