@@ -22,7 +22,7 @@ export default function BlogPage() {
             <a href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
                 编辑 Markdown
             </a>
-            <a href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
+            <a style={{marginLeft: '8px'}}  href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
                 编辑 Markdown ( dev mode )
             </a>
             <br />
