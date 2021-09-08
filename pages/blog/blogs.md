@@ -14,6 +14,7 @@
 ----------------
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
+- [95% 的算法都是基于这 6 种算法思想](https://mp.weixin.qq.com/s/wfc0qXwS4BL_YXYomojcBQ)
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
 - [前端经典面试题(60道前端面试题包含JS、CSS、React、网络、浏览器、程序题等)](https://mp.weixin.qq.com/s/X84owwj4DVIUNF260S0T1w)
