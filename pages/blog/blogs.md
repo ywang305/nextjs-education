@@ -31,7 +31,8 @@
 - [2021 年最值得关注的 8 个 Node.js 项目](https://mp.weixin.qq.com/s/H-8QZqN0d0TmpXJOf4eRtA)
 - [面试题：JS 获取某月的天数](https://mp.weixin.qq.com/s/sXNPlkDhOHi4YnjD4LigEQ)
 - [16个工程必备的JavaScript代码片段](https://mp.weixin.qq.com/s/Kaep1hajAxnXvdz0LTHRUg)
-
+- [TS 类型编程体操指南, TS meta programming](https://mp.weixin.qq.com/s/lynEIW0c9mw7A7VHAfC6hA)
+- [基于js管理大文件上传以及断点续传](https://mp.weixin.qq.com/s/hOkxwjSHGZ-3oXyN3CwwqQ)
 
 ----------------
 ## Front
