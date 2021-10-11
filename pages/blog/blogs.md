@@ -15,6 +15,7 @@
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
 - [主题思想](https://github.com/ywang305/challenge-node/blob/master/interviews/myltc.md)
+- [关于二分查找，我有话说](https://mp.weixin.qq.com/s/YciCyjT6peM9FWfSUww8Ww)
 - [95% 的算法都是基于这 6 种算法思想](https://mp.weixin.qq.com/s/wfc0qXwS4BL_YXYomojcBQ)
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
