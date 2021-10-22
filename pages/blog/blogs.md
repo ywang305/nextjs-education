@@ -8,7 +8,7 @@
 - [Springfox3.0: Swagger3.0，你所不知道的新变化！](https://mp.weixin.qq.com/s/xqHfAV1ofze87Q8e_lpPjg)
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 - [把 Redis 当作队列来用，真的合适吗？](https://mp.weixin.qq.com/s/taECl67JRFazrZm4XOFKXg)
-- [面试官：给我一个避免消息重复消费的解决方案？](https://mp.weixin.qq.com/s/KRdOKLEHLEi3qjo0IxYrNw)
+- [消息幂等（去重）通用解决方案](https://mp.weixin.qq.com/s/8f1a4We6Nw8v-XWNRaft-Q)
 
 
 ----------------
@@ -26,6 +26,7 @@
 - [面试前必备的 JavaScript 基础知识梳理总结](https://mp.weixin.qq.com/s/kRSXStfcKPvPt0WmH-jezQ)
 - [leetcode 最常见的 150 道前端面试题（简单题上)](https://mp.weixin.qq.com/s/idLCZ32YvYPqUg83FUJOdA)
 - [leetcode 最常见的150道前端面试题（简单题下)](https://mp.weixin.qq.com/s/1byx-MPeT0IfrBKwHFsZLg)
+- [leetcode最常见的150道前端面试题 --- 中等题2（共80题）](https://juejin.cn/post/6992775762491211783)
 - [12 个 GitHub 上超火的 JavaScript 奇技淫巧项目](https://mp.weixin.qq.com/s/yg_qHvLQTayq2lvLiCptbw)
 - [33 个提高前端工作效率的 VSCode 实用插件](https://mp.weixin.qq.com/s/8IMjdm1RfzT4DeVW1dOcOg)
 - [七厂面经--应届小前端的破局之路](https://mp.weixin.qq.com/s/NtyOO5aO5muwiPiYggG6uA)
