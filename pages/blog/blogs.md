@@ -1,5 +1,21 @@
 # Blogs
 
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#Architecture">Architecture</a></li>
+    <li><a href="#Algo">Algo</a></li>
+    <li><a href="#Node.js">Node.js</a></li>
+    <li><a href="#Front">Front</a></li>
+    <li><a href="#DevOps">DevOps</a></li>
+    <li><a href="#JAVA">JAVA</a></li>
+    <li><a href="#Design">Design</a></li>
+    <li><a href="#DB">DB</a></li>
+    <li><a href="#Util">Util</a></li>
+    <li><a href="#plan2read">plan2read</a></li>
+  </ol>
+</details>
 
 ## Architecture
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
@@ -105,7 +121,7 @@
 
 ----------------
 ----------------
-## plan to read
+## plan2read
 - aws
   - Rapid Docker on AWS: The fastest way to start with Docker on Amazon Web Services
   - Mastering AWS CloudFormation: Plan, develop, and deploy your cloud infrastructure effectively using AWS CloudFormation
