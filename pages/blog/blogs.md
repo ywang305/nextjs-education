@@ -67,6 +67,7 @@
 - [60道常见的 Kubernetes 面试题总结](https://mp.weixin.qq.com/s/m3iWYLTYqT6jOC8USsceTw)
 - [从零开始了解 kubernetes，还有谁不会？](https://mp.weixin.qq.com/s/yjznKiS3Rz2SOErIwQw59Q)
 - [从零开始搭建创业公司DevOps技术栈](https://mp.weixin.qq.com/s/QZMuF4ou-xVqjsTqtB0jeQ)
+- [kubernetes的实战入门](https://mp.weixin.qq.com/s?src=11&timestamp=1634963908&ver=3391&signature=wB8O1hVUe5iZ*YbexjmQHuXkHH8hn4zkRSUM3ZZw4mp5HnJ08SYFtjj5s54TGABPgKdn3aOF461V-shTbvhBE1esJSdu2eQqONrEXj0-liSWPvkIuBPRmP8dZjRrf6Xn&new=1)
 
 
 ----------------
@@ -84,6 +85,7 @@
 - [为什么阿里不允许用Executors创建线程池，而是通过ThreadPoolExecutor的方式？](https://mp.weixin.qq.com/s/pySWp2HPnOSK-ErZiblCkg)
 - [一年内容，200期Java面试题阶段汇总](https://mp.weixin.qq.com/s/tdbnDVQl7__FZ05Y97lhYg)
 - [Spring @Async](https://mp.weixin.qq.com/s/-IC_Ai8rKFqXKfos1k2EGA)
+- [最新 Java 核心技术教程，都在这了](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247524678&idx=3&sn=a153fd4fae16c357d55414e067d7bf25&chksm=eb50e470dc276d6676c923b597cbd28cf29e7a31393f1f03afedaf22f6aaf9e0e5517b9bdb32&scene=21#wechat_redirect)
 
 ----------------
 ## Design
