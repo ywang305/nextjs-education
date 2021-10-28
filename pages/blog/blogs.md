@@ -56,6 +56,7 @@
 - [16个工程必备的JavaScript代码片段](https://mp.weixin.qq.com/s/Kaep1hajAxnXvdz0LTHRUg)
 - [TS 类型编程体操指南, TS meta programming](https://mp.weixin.qq.com/s/lynEIW0c9mw7A7VHAfC6hA)
 - [基于js管理大文件上传以及断点续传](https://mp.weixin.qq.com/s/hOkxwjSHGZ-3oXyN3CwwqQ)
+- [从0开始发布一个无依赖、高质量的npm](https://mp.weixin.qq.com/s/aKwEF0ES1ldH5e0jgvh6qA)
 
 ----------------
 ## Front
