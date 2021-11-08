@@ -29,6 +29,7 @@
 
 ----------------
 ## Algo
+- [极客时间算法营大纲](https://shimo.im/docs/K6yh6Ttpkp8p9G3k/read)
 - [牛哥每日算法](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU1MjkxMjUwNw==&action=getalbum&album_id=1482995685707792384&scene=173&from_msgid=2247484753&from_itemidx=2&count=3&nolastread=1#wechat_redirect)
 - [主题思想](https://github.com/ywang305/challenge-node/blob/master/interviews/myltc.md)
 - [关于二分查找，我有话说](https://mp.weixin.qq.com/s/YciCyjT6peM9FWfSUww8Ww)
