@@ -36,6 +36,10 @@
 - [95% 的算法都是基于这 6 种算法思想](https://mp.weixin.qq.com/s/wfc0qXwS4BL_YXYomojcBQ)
 - [话题#Leetcode 题目汇总](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=Mzg2NTYyNTE4MQ==&scene=1&album_id=2044264381512761348&count=3#wechat_redirect)
 --------------
+
+## Rails
+- [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
+
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
