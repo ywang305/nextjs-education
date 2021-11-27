@@ -37,6 +37,7 @@
 ## Rails
 - [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
 - [BigBinary: Learn Rails Book](https://www.bigbinary.com/learn-rubyonrails-book)
+- [array destruction : splat](https://www.honeybadger.io/blog/ruby-splat-array-manipulation-destructuring/)
 
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
