@@ -1,19 +1,17 @@
 # Blogs
 
-<!-- TABLE OF CONTENTS -->
+- [Architecture](#Architecture)
+- [Algo](#Algo)
+- [Rails](#Rails)
+- [Node.js](#Node.js)
+- [Front](#Front)
+- [DevOps](#DevOps)
+- [JAVA](#JAVA)
+- [Design](#Design)
+- [DB](#DB)
+- [Util](#Util)
+- [plan2read](#plan2read)
 
-  <ol>
-    <li><a href="#Architecture">Architecture</a></li>
-    <li><a href="#Algo">Algo</a></li>
-    <li><a href="#Node.js">Node.js</a></li>
-    <li><a href="#Front">Front</a></li>
-    <li><a href="#DevOps">DevOps</a></li>
-    <li><a href="#JAVA">JAVA</a></li>
-    <li><a href="#Design">Design</a></li>
-    <li><a href="#DB">DB</a></li>
-    <li><a href="#Util">Util</a></li>
-    <li><a href="#plan2read">plan2read</a></li>
-  </ol>
 
 
 ## Architecture
