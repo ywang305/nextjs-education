@@ -1,8 +1,7 @@
 # Blogs
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
+
   <ol>
     <li><a href="#Architecture">Architecture</a></li>
     <li><a href="#Algo">Algo</a></li>
@@ -15,7 +14,7 @@
     <li><a href="#Util">Util</a></li>
     <li><a href="#plan2read">plan2read</a></li>
   </ol>
-</details>
+
 
 ## Architecture
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
