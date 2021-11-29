@@ -38,6 +38,7 @@
 - [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
 - [BigBinary: Learn Rails Book](https://www.bigbinary.com/learn-rubyonrails-book)
 - [array destruction : splat](https://www.honeybadger.io/blog/ruby-splat-array-manipulation-destructuring/)
+- [Differences Between #nil?, #empty?, #blank?, and #present?](https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html)
 
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
