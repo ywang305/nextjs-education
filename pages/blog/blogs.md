@@ -40,6 +40,7 @@
 - [array destruction : splat](https://www.honeybadger.io/blog/ruby-splat-array-manipulation-destructuring/)
 - [Differences Between #nil?, #empty?, #blank?, and #present?](https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html)
 - [Closures in Ruby: Blocks, Procs and Lambdas](https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html)
+- [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
 
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
