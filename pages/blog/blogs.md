@@ -43,6 +43,7 @@
 - [Closures in Ruby: Blocks, Procs and Lambdas](https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html)
 - [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
 - [Let's Read – Eloquent Ruby Series' Articles](https://dev.to/baweaver/series/13568)
+- [Rails + PostgreSQL JSONB, store_accessor](https://dev.to/kputra/rails-postgresql-jsonb-part-2-2fil)
 
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
