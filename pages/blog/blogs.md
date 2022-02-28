@@ -32,6 +32,7 @@
 - [关于二分查找，我有话说](https://mp.weixin.qq.com/s/YciCyjT6peM9FWfSUww8Ww)
 - [95% 的算法都是基于这 6 种算法思想](https://mp.weixin.qq.com/s/wfc0qXwS4BL_YXYomojcBQ)
 - [话题#Leetcode 题目汇总](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=Mzg2NTYyNTE4MQ==&scene=1&album_id=2044264381512761348&count=3#wechat_redirect)
+- [话题#力扣](https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzI0MTY3OTgwMw==&scene=1&album_id=2153164576698220547&count=3#wechat_redirect)
 - [全栈潇晨](https://xiaochen1024.com/)
 --------------
 
