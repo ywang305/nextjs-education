@@ -45,6 +45,7 @@
 - [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
 - [Let's Read – Eloquent Ruby Series' Articles](https://dev.to/baweaver/series/13568)
 - [Rails + PostgreSQL JSONB, store_accessor](https://dev.to/kputra/rails-postgresql-jsonb-part-2-2fil)
+- [RSpec mathcers](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/include-matcher)
 
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
