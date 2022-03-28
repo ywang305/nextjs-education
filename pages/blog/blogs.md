@@ -78,6 +78,7 @@
 - [Vue VSCode Snippets插件](https://mp.weixin.qq.com/s/zYkRMr-wQyyuQLD9GkGVIg)
 - [写在 2021：值得关注/学习的前端框架和工具库](https://mp.weixin.qq.com/s/N0vz6LMqb72wDtRuxLM4qQ)
 - [vue 实战中的一些小魔法](https://mp.weixin.qq.com/s/ITXwor7WKPrUMFts9YcQ-w)
+- [代理模式 优雅地给对象的所有方法添加异常处理](https://mp.weixin.qq.com/s/GP_T6Nv07gUqUF8OxJocWg)
 
 ----------------
 ## DevOps
