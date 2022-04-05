@@ -76,9 +76,9 @@
 - [Vue.js通用组件](https://dev.iviewui.com/articles/1086205156829302784)
 - [H5 项目如何适配暗黑模式](https://mp.weixin.qq.com/s/Iwuk2z73FB3Zj3cFZC37tA)
 - [Vue VSCode Snippets插件](https://mp.weixin.qq.com/s/zYkRMr-wQyyuQLD9GkGVIg)
-- [写在 2021：值得关注/学习的前端框架和工具库](https://mp.weixin.qq.com/s/N0vz6LMqb72wDtRuxLM4qQ)
 - [vue 实战中的一些小魔法](https://mp.weixin.qq.com/s/ITXwor7WKPrUMFts9YcQ-w)
 - [代理模式 优雅地给对象的所有方法添加异常处理](https://mp.weixin.qq.com/s/GP_T6Nv07gUqUF8OxJocWg)
+- [强化一波 hooks，这次咱们换个发力点](https://mp.weixin.qq.com/s/vmiTEboIUT1NHHOq3w64bg)
 
 ----------------
 ## DevOps
