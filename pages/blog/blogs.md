@@ -2,15 +2,14 @@
 
 - [Architecture](#Architecture)
 - [Algo](#Algo)
-- [Rails](#Rails)
 - [Node.js](#Node.js)
+- [Rails](#Rails)
 - [Front](#Front)
 - [DevOps](#DevOps)
 - [JAVA](#JAVA)
 - [Design](#Design)
 - [DB](#DB)
 - [Util](#Util)
-- [plan2read](#plan2read)
 
 
 
@@ -36,21 +35,11 @@
 - [全栈潇晨](https://xiaochen1024.com/)
 --------------
 
-## Rails
-- [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
-- [BigBinary: Learn Rails Book](https://www.bigbinary.com/learn-rubyonrails-book)
-- [array destruction : splat](https://www.honeybadger.io/blog/ruby-splat-array-manipulation-destructuring/)
-- [Differences Between #nil?, #empty?, #blank?, and #present?](https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html)
-- [Closures in Ruby: Blocks, Procs and Lambdas](https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html)
-- [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
-- [Let's Read – Eloquent Ruby Series' Articles](https://dev.to/baweaver/series/13568)
-- [Rails + PostgreSQL JSONB, store_accessor](https://dev.to/kputra/rails-postgresql-jsonb-part-2-2fil)
-- [RSpec mathcers](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/include-matcher)
-
 ## Node.js
 - [总结](https://github.com/ywang305/challenge-node/blob/master/interviews/frontend.mm.md)
 - [手撕前端面试代码题](https://mp.weixin.qq.com/s/SqHzsFG9Xqllns5MOo8k_Q)
 - [66 条 JavaScript 面试知识点](https://mp.weixin.qq.com/s/KZC5Zzr11OQd9BGJt7p_Ow)
+- [JS常见的手写题](https://mp.weixin.qq.com/s/Vbe33lJoj7CxZD-hDadKyg)
 - [前端经典面试题(60道前端面试题包含JS、CSS、React、网络、浏览器、程序题等)](https://mp.weixin.qq.com/s/X84owwj4DVIUNF260S0T1w)
 - [面试前必备的 JavaScript 基础知识梳理总结](https://mp.weixin.qq.com/s/kRSXStfcKPvPt0WmH-jezQ)
 - [leetcode 最常见的 150 道前端面试题（简单题上)](https://mp.weixin.qq.com/s/idLCZ32YvYPqUg83FUJOdA)
@@ -79,6 +68,17 @@
 - [vue 实战中的一些小魔法](https://mp.weixin.qq.com/s/ITXwor7WKPrUMFts9YcQ-w)
 - [代理模式 优雅地给对象的所有方法添加异常处理](https://mp.weixin.qq.com/s/GP_T6Nv07gUqUF8OxJocWg)
 - [强化一波 hooks，这次咱们换个发力点](https://mp.weixin.qq.com/s/vmiTEboIUT1NHHOq3w64bg)
+- [React+Three.js 实现一个超好玩的3D游戏：美女与龙珠](https://mp.weixin.qq.com/s/SknI7pQJ3R2zECGUYhacpw)
+
+---------
+## Rails
+- [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
+- [BigBinary: Learn Rails Book](https://www.bigbinary.com/learn-rubyonrails-book)
+- [Differences Between #nil?, #empty?, #blank?, and #present?](https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html)
+- [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
+- [Let's Read – Eloquent Ruby Series' Articles](https://dev.to/baweaver/series/13568)
+- [Rails + PostgreSQL JSONB, store_accessor](https://dev.to/kputra/rails-postgresql-jsonb-part-2-2fil)
+- [RSpec mathcers](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/include-matcher)
 
 ----------------
 ## DevOps
@@ -132,13 +132,3 @@
 ## Util
 - [分享和发现应用产品的网站](https://mp.weixin.qq.com/s/ykhz0cBUEsdKSnQ7zj8XUA)
 
-
-
-----------------
-----------------
-## plan2read
-- aws
-  - Rapid Docker on AWS: The fastest way to start with Docker on Amazon Web Services
-  - Mastering AWS CloudFormation: Plan, develop, and deploy your cloud infrastructure effectively using AWS CloudFormation
-  - [Systems Programming with Rust: A Project-Based Primer](https://www.letmeread.net/systems-programming-with-rust-a-project-based-primer/)
-  - [Hands-On Smart Contract Development with Hyperledger Fabric V2: Building Enterprise Blockchain Applications](https://www.letmeread.net/hands-on-smart-contract-development-with-hyperledger-fabric-v2-building-enterprise-blockchain-applications/)
