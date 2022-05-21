@@ -9,7 +9,7 @@
 - [JAVA](#JAVA)
 - [Design](#Design)
 - [DB](#DB)
-- [Util](#Util)
+- [Web3](#Web3)
 
 
 
@@ -129,6 +129,6 @@
 - [Spring Data MongoTemplate Example](https://www.concretepage.com/spring-5/spring-data-mongotemplate)
 
 ----------------
-## Util
-- [分享和发现应用产品的网站](https://mp.weixin.qq.com/s/ykhz0cBUEsdKSnQ7zj8XUA)
+## Web3
+- [Web3 DApp 最佳编程实践指南](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
 
