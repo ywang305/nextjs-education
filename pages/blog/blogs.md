@@ -21,6 +21,7 @@
 - [深度探索：前端中的后端](https://mp.weixin.qq.com/s/W-EvvKzmj1A8VsNKFYkuhQ)
 - [把 Redis 当作队列来用，真的合适吗？](https://mp.weixin.qq.com/s/taECl67JRFazrZm4XOFKXg)
 - [消息幂等（去重）通用解决方案](https://mp.weixin.qq.com/s/8f1a4We6Nw8v-XWNRaft-Q)
+- [常见分布式系统设计图解](https://www.raychase.net/6364)
 
 
 ----------------
