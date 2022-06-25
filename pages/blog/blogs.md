@@ -54,7 +54,6 @@
 - [typescript4.2新特性](https://mp.weixin.qq.com/s/rslVTm0oUyd33sBHe_buIw)
 - [How to format a date in JavaScript](https://flaviocopes.com/how-to-format-date-javascript)
 - [Node 模块机制不完全指北](https://mp.weixin.qq.com/s/v-5Cg5XKisQeitJDjOR4AA)
-- [2021 年最值得关注的 8 个 Node.js 项目](https://mp.weixin.qq.com/s/H-8QZqN0d0TmpXJOf4eRtA)
 - [面试题：JS 获取某月的天数](https://mp.weixin.qq.com/s/sXNPlkDhOHi4YnjD4LigEQ)
 - [16个工程必备的JavaScript代码片段](https://mp.weixin.qq.com/s/Kaep1hajAxnXvdz0LTHRUg)
 - [TS 类型编程体操指南, TS meta programming](https://mp.weixin.qq.com/s/lynEIW0c9mw7A7VHAfC6hA)
@@ -118,6 +117,7 @@
 - [一年内容，200期Java面试题阶段汇总](https://mp.weixin.qq.com/s/tdbnDVQl7__FZ05Y97lhYg)
 - [Spring @Async](https://mp.weixin.qq.com/s/-IC_Ai8rKFqXKfos1k2EGA)
 - [最新 Java 核心技术教程，都在这了](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247524678&idx=3&sn=a153fd4fae16c357d55414e067d7bf25&chksm=eb50e470dc276d6676c923b597cbd28cf29e7a31393f1f03afedaf22f6aaf9e0e5517b9bdb32&scene=21#wechat_redirect)
+- [ArrayList#subList这四个坑](https://mp.weixin.qq.com/s/ZHykdVg_Z65M8d9Vw-AtbA)
 
 ----------------
 ## Design
