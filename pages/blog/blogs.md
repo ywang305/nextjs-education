@@ -98,7 +98,7 @@
 - [60道常见的 Kubernetes 面试题总结](https://mp.weixin.qq.com/s/m3iWYLTYqT6jOC8USsceTw)
 - [从零开始了解 kubernetes，还有谁不会？](https://mp.weixin.qq.com/s/yjznKiS3Rz2SOErIwQw59Q)
 - [从零开始搭建创业公司DevOps技术栈](https://mp.weixin.qq.com/s/QZMuF4ou-xVqjsTqtB0jeQ)
-- [kubernetes的实战入门](https://mp.weixin.qq.com/s?src=11&timestamp=1634963908&ver=3391&signature=wB8O1hVUe5iZ*YbexjmQHuXkHH8hn4zkRSUM3ZZw4mp5HnJ08SYFtjj5s54TGABPgKdn3aOF461V-shTbvhBE1esJSdu2eQqONrEXj0-liSWPvkIuBPRmP8dZjRrf6Xn&new=1)
+- [构建 Java 镜像的 10 个最佳实践](https://mp.weixin.qq.com/s/wHtv2O3uSRfBJGg5bEtNwA)
 
 
 ----------------
