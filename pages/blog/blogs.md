@@ -72,13 +72,7 @@
 
 ---------
 ## Rails
-- [How to setup a Ruby on Rails project with React](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend)
-- [BigBinary: Learn Rails Book](https://www.bigbinary.com/learn-rubyonrails-book)
-- [Differences Between #nil?, #empty?, #blank?, and #present?](https://blog.appsignal.com/2018/09/11/differences-between-nil-empty-blank-and-present.html)
-- [17 useful ruby string methods](https://towardsdatascience.com/17-useful-ruby-string-methods-to-clean-and-format-your-data-9c9147ff87b9)
-- [Let's Read – Eloquent Ruby Series' Articles](https://dev.to/baweaver/series/13568)
-- [Rails + PostgreSQL JSONB, store_accessor](https://dev.to/kputra/rails-postgresql-jsonb-part-2-2fil)
-- [RSpec mathcers](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers/include-matcher)
+- [Rails Pro Tips](https://x.com/RubyCademy)
 
 ----------------
 ## DevOps
@@ -118,11 +112,6 @@
 - [Spring @Async](https://mp.weixin.qq.com/s/-IC_Ai8rKFqXKfos1k2EGA)
 - [最新 Java 核心技术教程，都在这了](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247524678&idx=3&sn=a153fd4fae16c357d55414e067d7bf25&chksm=eb50e470dc276d6676c923b597cbd28cf29e7a31393f1f03afedaf22f6aaf9e0e5517b9bdb32&scene=21#wechat_redirect)
 - [ArrayList#subList这四个坑](https://mp.weixin.qq.com/s/ZHykdVg_Z65M8d9Vw-AtbA)
-
-----------------
-## Design
-- [设计灵感：12 组投资 APP 界面设计](https://mp.weixin.qq.com/s/EpiDVn7mJgWeatGxLNmDRQ)
-- [设计灵感：12组银行金融类App界面设计](https://mp.weixin.qq.com/s/XRU1JnuhStOxMrYRqUcfhQ)
 
 --------------
 ## DB
