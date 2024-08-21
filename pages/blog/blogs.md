@@ -12,9 +12,12 @@
 - [DB](#DB)
 - [Web3](#Web3)
 
+
 ## Books
 - [Using Node.js Streams _ Mastering Node.js Web Development](Using%20Node.js%20Streams%20_%20Mastering%20Node.js%20Web%20Development.pdf)
+  from nodejs stream (req, resp in https are all stream class) to pipeline to Express.js enhancement on Req/Resp, as resp.sendFile, resp.json
 
+-------------------
 ## Architecture
 - [Communication in a microservice architecture](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture)
 - [Kafka中的消费者组（Consumer Group）](https://blog.csdn.net/gdkyxy2013/article/details/86644919)
@@ -62,6 +65,7 @@
 - [基于js管理大文件上传以及断点续传](https://mp.weixin.qq.com/s/hOkxwjSHGZ-3oXyN3CwwqQ)
 - [从0开始发布一个无依赖、高质量的npm](https://mp.weixin.qq.com/s/aKwEF0ES1ldH5e0jgvh6qA)
 - [Streaming ChatGPT with Express.js](https://medium.com/@adamkudzin/streaming-chatgpt-with-express-js-d6ea96b08514)
+- [store image with Base64 in MongoDB](https://saragam.medium.com/storing-images-with-base64-encoding-dcc443af8711)
 
 ----------------
 ## Front
