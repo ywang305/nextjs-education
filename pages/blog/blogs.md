@@ -14,8 +14,8 @@
 
 
 ## Books
-- [Using Node.js Streams _ Mastering Node.js Web Development](Using%20Node.js%20Streams%20_%20Mastering%20Node.js%20Web%20Development.pdf) \
-  from nodejs stream (req, resp in https are all stream class) to pipeline to Express.js enhancement on Req/Resp, as resp.sendFile, resp.json
+- <a href='Using%20Node.js%20Streams%20_%20Mastering%20Node.js%20Web%20Development.pdf' target='_blank' rel='noopener noreferrer'>
+
 
 -------------------
 ## Architecture
