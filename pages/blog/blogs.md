@@ -81,6 +81,7 @@
 ---------
 ## Rails
 - [Rails Pro Tips](https://x.com/RubyCademy)
+- [Understanding ActiveRecord Dependent Options](https://danielabaron.me/blog/activerecord-dependent-options)
 
 ----------------
 ## DevOps
