@@ -76,7 +76,7 @@
 - [vue 实战中的一些小魔法](https://mp.weixin.qq.com/s/ITXwor7WKPrUMFts9YcQ-w)
 - [代理模式 优雅地给对象的所有方法添加异常处理](https://mp.weixin.qq.com/s/GP_T6Nv07gUqUF8OxJocWg)
 - [强化一波 hooks，这次咱们换个发力点](https://mp.weixin.qq.com/s/vmiTEboIUT1NHHOq3w64bg)
-- [React+Three.js 实现一个超好玩的3D游戏：美女与龙珠](https://mp.weixin.qq.com/s/SknI7pQJ3R2zECGUYhacpw)
+- [Vite5.0+Typescript+React18+Zustand 最新搭建企业级前端项目](https://mp.weixin.qq.com/s/uVhrNfiqzjiuUvsNhgLRyA)
 
 ---------
 ## Rails
