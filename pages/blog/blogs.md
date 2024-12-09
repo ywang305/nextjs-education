@@ -77,6 +77,7 @@
 - [代理模式 优雅地给对象的所有方法添加异常处理](https://mp.weixin.qq.com/s/GP_T6Nv07gUqUF8OxJocWg)
 - [强化一波 hooks，这次咱们换个发力点](https://mp.weixin.qq.com/s/vmiTEboIUT1NHHOq3w64bg)
 - [Vite5.0+Typescript+React18+Zustand 最新搭建企业级前端项目](https://mp.weixin.qq.com/s/uVhrNfiqzjiuUvsNhgLRyA)
+- [前端小刷 #Typescript](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkwNzc2MDU2Nw==&action=getalbum&album_id=3734692754178211848&subscene=159&subscene=189&scenenote=https%3A%2F%2Fmp.weixin.qq.com%2Fs%3F__biz%3DMzkwNzc2MDU2Nw%3D%3D%26mid%3D2247484045%26idx%3D1%26sn%3D01ecbe277d992ffb91e2e3fde09e5c30%26chksm%3Dc0d50455f7a28d4361707e1a789649691a2bd9c080ee96499fed2ea084153a600cfcb7b4fa4f%26cur_album_id%3D3734692754178211848%26scene%3D189%23wechat_redirect&nolastread=1#wechat_redirect)
 
 ---------
 ## Rails
