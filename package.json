@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "NODE_OPTIONS='--inspect --openssl-legacy-provider' next dev",
     "build": "next build",
     "start": "next start"
   },
   "engines": {
-    "node": "22.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@material-ui/core": "^4.10.0",
