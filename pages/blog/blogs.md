@@ -129,6 +129,6 @@
 - [Spring Data MongoTemplate Example](https://www.concretepage.com/spring-5/spring-data-mongotemplate)
 
 ----------------
-## Web3
-- [Web3 DApp 最佳编程实践指南](https://guoyu.mirror.xyz/RD-xkpoxasAU7x5MIJmiCX4gll3Cs0pAd5iM258S1Ek)
+## AI
+- [Get Start With MCP](https://levelup.gitconnected.com/get-start-with-model-context-protocol-671ebf3fe62d)
 
