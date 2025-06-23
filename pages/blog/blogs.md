@@ -8,9 +8,9 @@
 - [Front](#Front)
 - [DevOps](#DevOps)
 - [JAVA](#JAVA)
-- [Design](#Design)
 - [DB](#DB)
 - [AI](#AI)
+- [Gaming](#Gaming)
 
 
 ## Books
@@ -133,3 +133,5 @@
 - [Get Start With MCP](https://levelup.gitconnected.com/get-start-with-model-context-protocol-671ebf3fe62d)
 - [Attach VSCode Debugger to Running FastAPI Code on Docker Container](https://medium.com/@mizutori/fastapi-study-diary-2-how-to-attach-vscode-debugger-to-running-fastapi-code-on-docker-container-cc3c91fd9246)
 
+## Gaming
+- [Becsy-ECS arch overview](https://lastolivegames.github.io/becsy/guide/architecture/overview#overview)
