@@ -65,13 +65,13 @@ export const links = [
       "This is a light web app that display latest twitters based on a map location, powered by Svelte template",
   },
   {
-    name: "Shoping Cart",
-    link: "https://effulgent-yeot-044234.netlify.app",
+    name: "Web IDE",
+    link: "https://yao-web-ide.netlify.app/",
     Icon: ShoppingCartIcon,
-    image: "/landing/tech_shop.png",
+    image: "/landing/web-ide.png",
     scope: "external",
     description:
-      "A simple shopping cart project, using React, Stripe, and Material-UI, boltAI",
+      "A Web IDE",
   },
   {
     name: "Web-RTC",
