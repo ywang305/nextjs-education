@@ -57,7 +57,7 @@ const joinRoom = async (peerConnection, callerId) => {
     // Code for creating SDP answer below
     const offer = roomSnapshot.data().offer;
     console.log('Got offer:', offer);
-    await peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
+    await peerConnection.setRemoteDescription(offer);
     const answer = await peerConnection.createAnswer();
     console.log('Created answer:', answer);
     await peerConnection.setLocalDescription(answer);

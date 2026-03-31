@@ -73,7 +73,7 @@ const AddAnno = ({ parag_id }) => {
             为这句添加笔记
         </Button>
     ) : (
-        <Box border={1} borderRadius={8} p={2}>
+        <Box style={{ border: '1px solid rgba(0, 240, 255, 0.2)', borderRadius: 2 }} p={2}>
             <TextField
                 color='primary'
                 variant='outlined'

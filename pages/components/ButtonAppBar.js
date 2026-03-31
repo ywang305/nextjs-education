@@ -18,6 +18,7 @@ import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import LocalTaxiIcon from "@material-ui/icons/LocalTaxi";
 import BlogIcon from "@material-ui/icons/ViewList";
 import ShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import PoolIcon from "@material-ui/icons/Pool";
 
 import {
   Divider,
@@ -30,6 +31,7 @@ import {
   Avatar,
 } from "@material-ui/core";
 import useDevice from "../../lib/store/device/useDevice";
+import { getIsManfen, getBrand } from "../../lib/utils/isManfen";
 
 const useUserId = () => {
   const userId = useSelector((state) => state.login.userId);
@@ -72,6 +74,15 @@ export const links = [
     scope: "external",
     description:
       "A Web IDE",
+  },
+  {
+    name: "Swim Meet App",
+    link: "https://swim-meet-app.vercel.app/",
+    Icon: PoolIcon,
+    image: "/landing/swim-meet-app.png",
+    scope: "mobile,external",
+    description:
+      "Live swim results app. Search swimmers by name or browse current meet results, powered by SwimCloud data.",
   },
   {
     name: "Web-RTC",
@@ -131,7 +142,7 @@ const Links = ({ iScope = "web" }) => {
                   href={link}
                   style={{
                     textDecoration: "none",
-                    color: "white",
+                    color: "#e0e0ff",
                   }}
                 >
                   <WebListItem />
@@ -141,7 +152,7 @@ const Links = ({ iScope = "web" }) => {
                   <a
                     style={{
                       textDecoration: "none",
-                      color: "white",
+                      color: "#e0e0ff",
                     }}
                   >
                     <WebListItem />
@@ -196,9 +207,7 @@ export function ButtonAppBar() {
   const [isCompact] = useWinLayout();
   const [open, toggleDrawer] = useDrawer();
 
-  const brand = /manfen/gi.test(location.hostname)
-    ? "Manfen-Tech"
-    : "Yao's Portfolio";
+  const brand = getBrand();
 
   return (
     <>
@@ -207,20 +216,31 @@ export function ButtonAppBar() {
           <Box ml={2}>
             <IconButton
               edge="start"
-              color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
+              style={{ color: '#00f0ff', transition: 'all 0.3s ease' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#33f5ff';
+                e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(0, 240, 255, 0.8))';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = '#00f0ff';
+                e.currentTarget.style.filter = 'none';
+              }}
             >
               <MenuIcon />
             </IconButton>
           </Box>
           <Link href="/" replace>
-            <Typography
-              variant="h6"
-              style={{ cursor: "pointer", marginLeft: 16 }}
-            >
-              {brand}
-            </Typography>
+            <a style={{ textDecoration: "none", color: "inherit" }}>
+              <Typography
+                variant="h6"
+                className="cyber-text-glow"
+                style={{ cursor: "pointer", marginLeft: 16, color: "#00f0ff" }}
+              >
+                {brand}
+              </Typography>
+            </a>
           </Link>
           <Box style={{ flexGrow: 1 }} />
           {!isCompact && <Links iScope="web" />}
@@ -229,15 +249,18 @@ export function ButtonAppBar() {
 
       <Drawer anchor="left" open={open} onClose={toggleDrawer}>
         <Box
-          bgcolor="primary.main"
-          color="info.contrastText"
+          style={{
+            background: 'linear-gradient(180deg, #0d0d14 0%, #12121a 100%)',
+            borderBottom: '1px solid rgba(0, 240, 255, 0.3)',
+          }}
+          color="#e0e0ff"
           p={2}
           display="flex"
           alignItems="center"
         >
           <Avatar alt="HadesFlower" src="/logo.jpg" />
           <Box ml={1}>
-            <Typography variant="h6">{brand}</Typography>
+            <Typography variant="h6" style={{ color: '#00f0ff' }} className="cyber-text-glow">{brand}</Typography>
           </Box>
         </Box>
 

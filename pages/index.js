@@ -6,6 +6,7 @@ import { Typography, Box, useTheme, Divider } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { links } from './components/ButtonAppBar';
 import Footer from './components/Footer';
+import { getIsManfen } from '../lib/utils/isManfen';
 
 const images = [
     'landing/consult.jpg',
@@ -23,14 +24,14 @@ const images = [
 const Landing = () => {
     const isCompact = useSelector(state => state.device.window.isCompact);
 
-    const isManfen = /manfen/gi.test(location.hostname);
+    const isManfen = getIsManfen();
 
     return (
         <div>
             <Box
                 display='flex'
                 justifyContent='space-around'
-                id='imgaes'
+                id='images'
                 flexWrap='wrap'
                 py={1}
             >
@@ -50,20 +51,25 @@ const Landing = () => {
                                   maxWidth={isCompact ? 1 : 0.45}
                                   p={2}
                                   my={2}
-                                  boxShadow={3}
-                                  borderRadius={16}
+                                  style={{
+                                      background: '#12121a',
+                                      border: '1px solid rgba(0, 240, 255, 0.15)',
+                                      transition: 'all 0.3s ease',
+                                      borderRadius: 2,
+                                  }}
+                                  className='cyber-glow'
                               >
                                   <a
                                       href={link}
-                                      style={{ textDecoration: 'none' }}
+                                      style={{ textDecoration: 'none', color: '#e0e0ff' }}
                                   >
-                                      <h3>{name}</h3>
+                                      <Typography variant='h6' style={{ color: '#00f0ff', marginBottom: 8 }}>{name}</Typography>
                                       <img
                                           src={image}
                                           alt={image}
                                           width='100%'
                                       />
-                                      <p>{description}</p>
+                                      <Typography variant='body2' style={{ color: '#8a8aad', marginTop: 8 }}>{description}</Typography>
                                   </a>
                               </Box>
                           ))}

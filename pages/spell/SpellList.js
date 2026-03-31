@@ -91,7 +91,7 @@ const SpellList = () => {
               <Box
                 p={1}
                 fontSize='h6.fontSize'
-                fontFamily='Comic Sans MS'
+                fontFamily='"Share Tech Mono", monospace'
                 color={!isActive && 'text.disabled'}
               >
                 {isActive ? (

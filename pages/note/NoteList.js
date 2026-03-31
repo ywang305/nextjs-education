@@ -15,7 +15,7 @@ const NoteList = () => {
 
     const getTitles = useCallback(async () => {
         const noteList = await fetchAsync('/api/note');
-        setList(noteList);
+        setList(Array.isArray(noteList) ? noteList : []);
     }, []);
 
     useEffect(() => {

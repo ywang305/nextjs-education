@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import dbconn from '../../../lib/serverless/dbconn';
 import restHandler from '../../../lib/serverless/rest_api_handler';
 
-// @ this api has been depricated
+// @ this api has been deprecated
 export const spellSchema = new mongoose.Schema({
   fromUserId: String,
   toUserId: String,

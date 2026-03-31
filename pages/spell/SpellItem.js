@@ -76,7 +76,7 @@ const SpellItem = ({ words = '' }) => {
                         onClick={clickHanlder(i)}
                         component='span'
                         letterSpacing={10}
-                        bgcolor={isIndexWord && 'grey.100'}
+                        bgcolor={isIndexWord ? 'rgba(0, 240, 255, 0.08)' : undefined}
                         mr={3}
                         style={{ cursor: 'pointer' }}
                     >

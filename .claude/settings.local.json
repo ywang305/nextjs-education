@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(asdf list:*)",
+      "Bash(npx next:*)",
+      "Bash(NODE_OPTIONS='--openssl-legacy-provider' npx next build)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(npx --yes playwright --version)",
+      "Bash(npx playwright:*)"
+    ]
+  }
+}

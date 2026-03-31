@@ -18,11 +18,12 @@ export default function BlogPage() {
     }, []);
 
     return (
-        <div>
-            <a href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
+        <div style={{ padding: '16px' }}>
+            <a href='https://github.com/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'
+               style={{ color: '#00f0ff' }}>
                 编辑 Markdown
             </a>
-            <a style={{marginLeft: '8px'}}  href='https://github.dev/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
+            <a style={{marginLeft: '8px', color: '#00f0ff'}}  href='https://github.dev/ywang305/nextjs-education/edit/master/pages/blog/blogs.md'>
                 编辑 Markdown ( dev mode )
             </a>
             <br />

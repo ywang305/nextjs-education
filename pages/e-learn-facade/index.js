@@ -17,7 +17,17 @@ import Router, { useRouter } from 'next/router';
 
 const LinkCard = ({ href, src, alt }) => {
 	return (
-		<Box boxShadow={2} minWidth={180} m={2}>
+		<Box
+			minWidth={180}
+			m={2}
+			style={{
+				background: '#12121a',
+				border: '1px solid rgba(0, 240, 255, 0.15)',
+				transition: 'all 0.3s ease',
+				borderRadius: 2,
+			}}
+			className='cyber-glow'
+		>
 			<Link href={href}>
 				<Button color='primary'>
 					<Box display='flex' flexDirection='column'>
@@ -30,7 +40,7 @@ const LinkCard = ({ href, src, alt }) => {
 								width='100%'
 							/>
 						</Box>
-						<Typography gutterBottom variant='subtitle1'>
+						<Typography gutterBottom variant='subtitle1' style={{ color: '#00f0ff' }}>
 							{alt}
 						</Typography>
 					</Box>

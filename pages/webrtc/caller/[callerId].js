@@ -75,9 +75,8 @@ async function createRoom(peerConnection, callerId) {
   roomRef.onSnapshot(async (snapshot) => {
     const data = snapshot.data();
     if (data && data.answer && !peerConnection.currentRemoteDescription) {
-      console.log('Got remote anwser: ', data.answer);
-      const rtcSessionDescription = new RTCSessionDescription(data.answer);
-      await peerConnection.setRemoteDescription(rtcSessionDescription);
+      console.log('Got remote answer: ', data.answer);
+      await peerConnection.setRemoteDescription(data.answer);
     }
   });
   // Listening for remote session description above

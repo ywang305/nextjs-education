@@ -89,8 +89,8 @@ const Paragraph = ({ paragraph, focused = false }) => {
                         paragraph
                         onPointerUp={openPopover}
                         style={{
-                            backgroundColor: focused ? grey[50] : 'transparent',
-                            UserSelect: 'text',
+                            backgroundColor: focused ? 'rgba(0, 240, 255, 0.05)' : 'transparent',
+                            userSelect: 'text',
                             WebkitUserSelect: 'text',
                         }}
                     >
